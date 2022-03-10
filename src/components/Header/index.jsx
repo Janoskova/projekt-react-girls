@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './style.css';
 
 const Header = () => {
+  const [hamburger, setHamburger] = useState(false);
+
   return (
     <>
-      <nav>
-        <ul>
-          <NavLink activeClassName="active" exact to="/">
+      <nav className="navigation">
+        <button
+          onClick={() => setHamburger(!hamburger)}
+          className={hamburger ? 'menu menu--opened' : 'menu menu--closed'}
+        ></button>
+        <ul
+          className={
+            hamburger
+              ? 'navigation__list navigation__list--opened'
+              : 'navigation__list'
+          }
+        >
+          <NavLink
+            onClick={() => setHamburger(false)}
+            className="navigation__item"
+            activeClassName="navigation__item--active"
+            exact
+            to="/"
+          >
             Domů
-          </NavLink>{' '}
-          <NavLink activeClassName="active" to="/razeni">
+          </NavLink>
+          <NavLink
+            onClick={() => setHamburger(false)}
+            className="navigation__item"
+            activeClassName="navigation__item--active"
+            to="/razeni"
+          >
             Řazení
           </NavLink>
         </ul>
