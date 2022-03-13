@@ -1,0 +1,14 @@
+.references {
+  background-color: $color-secondary;
+  padding: $spacer;
+  text-align: center;
+
+  &__text {
+    display: block;
+    margin-bottom: $spacer;
+  }
+
+  &__link {
+    color: $color-font;
+  }
+}

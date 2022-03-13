@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './style.css';
+import '../scss/main.scss';
 
 const Header = () => {
   const [hamburger, setHamburger] = useState(false);

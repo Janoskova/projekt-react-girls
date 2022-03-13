@@ -1,0 +1,60 @@
+@import '../base/variables';
+
+.menu {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0 20px 20px;
+
+  &--closed {
+    background: transparent url('../../assets/menu-thin.svg') no-repeat;
+  }
+
+  &--opened {
+    background: transparent url('../../assets/x-mark-thin.svg') no-repeat;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navigation {
+  &__list {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list--opened {
+    display: block;
+  }
+
+  &__item {
+    display: block;
+    text-decoration: none;
+    color: $color-font;
+    text-align: center;
+    padding: $spacer;
+  }
+
+  &__item:hover {
+    background-color: $color-secondary;
+  }
+
+  &__item--active {
+    font-weight: bold;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__list {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__item {
+      border: 0;
+    }
+  }
+}

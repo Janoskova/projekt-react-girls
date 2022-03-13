@@ -1,0 +1,123 @@
+.menu {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0 20px 20px;
+}
+.menu--closed {
+  background: transparent url("../../assets/menu-thin.svg") no-repeat;
+}
+.menu--opened {
+  background: transparent url("../../assets/x-mark-thin.svg") no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+
+.navigation__list {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation__list--opened {
+  display: block;
+}
+.navigation__item {
+  display: block;
+  text-decoration: none;
+  color: #262c2c;
+  text-align: center;
+  padding: 20px;
+}
+.navigation__item:hover {
+  background-color: #68afad;
+}
+.navigation__item--active {
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .navigation__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navigation__item {
+    border: 0;
+  }
+}
+
+.references {
+  background-color: #68afad;
+  padding: 20px;
+  text-align: center;
+}
+.references__text {
+  display: block;
+  margin-bottom: 20px;
+}
+.references__link {
+  color: #262c2c;
+}
+
+.storm {
+  height: 600px;
+  background: url("../../assets/boat.jpg") no-repeat center center/cover;
+  position: relative;
+}
+.storm__heading {
+  font-size: 3rem;
+  text-align: center;
+  padding: 20px;
+}
+.storm__boat {
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .storm {
+    height: 700px;
+  }
+  .storm__heading {
+    position: absolute;
+    right: 50%;
+    bottom: 60%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .storm {
+    height: 1000px;
+  }
+  .storm__heading {
+    font-size: 4rem;
+    right: 55%;
+    bottom: 60%;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  font-family: sans-serif;
+  color: #262c2c;
+}
+
+h1,
+h1,
+h3 {
+  margin: 0;
+  font-family: "Grenze Gotisch", cursive;
+}/*# sourceMappingURL=main.css.map */
