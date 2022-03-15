@@ -4,7 +4,6 @@
   position: relative;
 
   &__heading {
-    font-size: 3rem;
     text-align: center;
     padding: $spacer;
   }
@@ -29,9 +28,28 @@
     height: 1000px;
 
     &__heading {
-      font-size: 4rem;
       right: 55%;
       bottom: 60%;
+    }
+  }
+}
+
+.activities {
+  text-align: center;
+
+  &__heading {
+    margin-bottom: $spacer-double;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    &__heading {
+      flex-basis: 100%;
+      margin: 60px;
     }
   }
 }

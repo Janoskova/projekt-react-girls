@@ -3,7 +3,7 @@ import React from 'react';
 const Arranging = () => {
   return (
     <>
-      <h1>Řazení událostí</h1>
+      <h1>Chronologické řazení</h1>
     </>
   );
 };

@@ -1,0 +1,76 @@
+.activity {
+  &__link {
+    text-decoration: none;
+  }
+
+  &__bubble {
+    width: 270px;
+    height: 270px;
+    border: 10px solid $color-secondary;
+    border-radius: 100%;
+    margin: $spacer-double auto $spacer-double auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  &__heading {
+    color: $color-font;
+  }
+
+  &__hourglass {
+    background: url('../../assets/hourglass.svg') no-repeat center
+      center/contain;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px auto;
+  }
+
+  &__map {
+    background: url('../../assets/navigation-map.svg') no-repeat center
+      center/contain;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__bubble {
+      width: 300px;
+      height: 300px;
+      margin: 0;
+    }
+
+    &__hourglass {
+      width: 150px;
+      height: 150px;
+    }
+
+    &__map {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__bubble {
+      width: 350px;
+      height: 350px;
+    }
+
+    &__hourglass {
+      width: 200px;
+      height: 200px;
+    }
+
+    &__map {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}

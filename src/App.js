@@ -3,6 +3,7 @@ import './scss/main.scss';
 import Header from './components/Header';
 import Home from './pages/Home/index';
 import Arranging from './pages/Arranging';
+import Moving from './pages/Moving';
 import Footer from './components/Footer';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route path="/razeni">
             <Arranging />
+          </Route>
+          <Route path="/presouvani">
+            <Moving />
           </Route>
         </Switch>
       </main>

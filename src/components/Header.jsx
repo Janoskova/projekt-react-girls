@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../scss/main.scss';
 
 const Header = () => {
   const [hamburger, setHamburger] = useState(false);
@@ -34,7 +33,15 @@ const Header = () => {
             activeClassName="navigation__item--active"
             to="/razeni"
           >
-            Řazení
+            Chronologické řazení
+          </NavLink>
+          <NavLink
+            onClick={() => setHamburger(false)}
+            className="navigation__item"
+            activeClassName="navigation__item--active"
+            to="/presouvani"
+          >
+            Přesouvání po mapě
           </NavLink>
         </ul>
       </nav>
