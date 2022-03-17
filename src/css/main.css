@@ -122,6 +122,21 @@
   }
 }
 
+.northAmerica:hover,
+.southAmerica:hover,
+.europe:hover,
+.asia:hover,
+.australia:hover,
+.africa:hover {
+  fill: #262c2c;
+}
+
+.wave {
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
 .storm {
   height: 600px;
   background: url("../../assets/boat.jpg") no-repeat center center/cover;
@@ -130,11 +145,6 @@
 .storm__heading {
   text-align: center;
   padding: 20px;
-}
-.storm__boat {
-  display: block;
-  position: absolute;
-  bottom: 0;
 }
 @media screen and (min-width: 768px) {
   .storm {
@@ -171,7 +181,24 @@
   }
   .activities__heading {
     flex-basis: 100%;
-    margin: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.map {
+  text-align: center;
+  margin: 0 20px 0 20px;
+}
+.map__instruction {
+  margin: 20px 0 40px 0;
+  font-size: 1.5rem;
+}
+.map__container {
+  margin: 0 auto 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .map__container {
+    max-width: 700px;
   }
 }
 
@@ -189,7 +216,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Grenze Gotisch", cursive;
   color: #262c2c;
 }
 

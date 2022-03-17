@@ -8,12 +8,6 @@
     padding: $spacer;
   }
 
-  &__boat {
-    display: block;
-    position: absolute;
-    bottom: 0;
-  }
-
   @media screen and (min-width: 768px) {
     height: 700px;
 
@@ -49,7 +43,7 @@
 
     &__heading {
       flex-basis: 100%;
-      margin: 60px;
+      margin-bottom: 60px;
     }
   }
 }

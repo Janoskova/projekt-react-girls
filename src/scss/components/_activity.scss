@@ -6,7 +6,7 @@
   &__bubble {
     width: 270px;
     height: 270px;
-    border: 10px solid $color-secondary;
+    border: 10px solid $color-primary;
     border-radius: 100%;
     margin: $spacer-double auto $spacer-double auto;
 
@@ -15,7 +15,7 @@
     align-items: center;
 
     &:hover {
-      background-color: $color-secondary;
+      background-color: $color-primary;
     }
   }
 

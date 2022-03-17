@@ -13,7 +13,7 @@ const Footer = () => {
         <div>
           icons from{' '}
           <a className="references__link" href="https://iconmonstr.com/">
-            iconmonster
+            iconmonster{' '}
           </a>
           and{' '}
           <a className="references__link" href="https://freesvg.org/">
