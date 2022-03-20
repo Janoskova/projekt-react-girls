@@ -1,4 +1,4 @@
-const activities = [
+export const activities = [
   {
     id: 1,
     heading: 'Chronologické řazení',
@@ -13,4 +13,15 @@ const activities = [
   },
 ];
 
-export default activities;
+export const places = [
+  {
+    id: 1,
+    text: 'mys Dobré naděje',
+    answer: 'AF',
+  },
+  {
+    id: 2,
+    text: 'Španělsko',
+    answer: 'EU',
+  },
+];

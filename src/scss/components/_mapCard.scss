@@ -1,0 +1,13 @@
+.card {
+  &__item {
+    color: $color-primary;
+    background-color: $color-font;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    border: 2px solid $color-primary;
+  }
+
+  &__item--light {
+    opacity: 0.5;
+  }
+}
