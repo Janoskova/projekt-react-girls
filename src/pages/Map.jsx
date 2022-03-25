@@ -7,8 +7,15 @@ import PathAF from '../components/PathAF';
 import PathEU from '../components/PathEU';
 import PathSA from '../components/PathSA';
 import { places } from '../data';
+import { useState } from 'react';
 
 const Map = () => {
+  const [answer, setAnswer] = useState(null);
+
+  const showResult = (result) => {
+    setAnswer(result);
+  };
+
   return (
     <>
       <div className="map">
@@ -22,12 +29,12 @@ const Map = () => {
             version="1"
             viewBox="0 0 1052.4 580"
           >
-            <PathNA />
-            <PathAS />
-            <PathAU />
-            <PathAF />
-            <PathEU />
-            <PathSA />
+            <PathNA result={showResult} />
+            <PathAS result={showResult} />
+            <PathAU result={showResult} />
+            <PathAF result={showResult} />
+            <PathEU result={showResult} />
+            <PathSA result={showResult} />
           </svg>
         </section>
         <section className="map__cards">
@@ -37,6 +44,30 @@ const Map = () => {
             );
           })}
         </section>
+        {answer === true ? (
+          <div className="modal">
+            <button
+              onClick={() => setAnswer(null)}
+              className="modal__close"
+            ></button>
+            <p className="modal__text">
+              Skvělé! Doplul jsi na správné místo. Pokračuj dál ve své cestě.
+            </p>
+            <div className="modal__boat modal__boat--right"></div>
+          </div>
+        ) : null}
+        {answer === false ? (
+          <div className="modal">
+            <button
+              onClick={() => setAnswer(null)}
+              className="modal__close"
+            ></button>
+            <p className="modal__text">
+              Doplul jsi do nesprávných vod. Změň své lodi směr a zkus to znova!
+            </p>
+            <div className="modal__boat modal__boat--wrong"></div>
+          </div>
+        ) : null}
       </div>
     </>
   );

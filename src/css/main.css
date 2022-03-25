@@ -199,6 +199,7 @@
 .map {
   text-align: center;
   margin: 0 20px 0 20px;
+  position: relative;
 }
 .map__instruction {
   margin: 20px 0 40px 0;
@@ -218,6 +219,51 @@
   .map__cards {
     margin-bottom: 80px;
   }
+}
+
+.modal {
+  width: 80vw;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  background-color: #68afadf3;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal__close {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  cursor: pointer;
+  background: transparent url("../../assets/x-mark-thin.svg") no-repeat;
+}
+.modal__text {
+  font-size: 2rem;
+  margin: 0 auto 0 auto;
+  flex-basis: 100%;
+}
+.modal__boat {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto 0 auto;
+  flex-basis: 100%;
+}
+@media screen and (min-width: 768px) {
+  .modal__boat {
+    height: 250px;
+    width: 250px;
+  }
+}
+.modal__boat--right {
+  background: url(../../assets/boat-right-answer.svg) no-repeat center center/contain;
+}
+.modal__boat--wrong {
+  background: url(../../assets/boat-wrong-answer.svg) no-repeat center center/contain;
 }
 
 html {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-const PathNA = () => {
+const PathNA = ({ result }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'card',
     drop: (item) => showAnswer(item.answer),
@@ -11,7 +11,7 @@ const PathNA = () => {
   }));
 
   const showAnswer = (answer) => {
-    answer === 'NA' ? alert('Správně') : alert('Špatně!');
+    answer === 'NA' ? result(true) : result(false);
   };
 
   let fill = '#68afad';

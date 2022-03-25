@@ -1,0 +1,79 @@
+.map {
+  text-align: center;
+  margin: 0 $spacer 0 $spacer;
+  position: relative;
+
+  &__instruction {
+    margin: $spacer 0 $spacer-double 0;
+    font-size: 1.5rem;
+  }
+
+  &__container {
+    margin: 0 auto 0 auto;
+  }
+
+  &__cards {
+    margin-top: $spacer-double;
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__container {
+      max-width: 700px;
+    }
+
+    &__cards {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.modal {
+  width: 80vw;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  background-color: #68afadf3;
+  border-radius: 15px;
+  padding: $spacer;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__close {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    cursor: pointer;
+    background: transparent url('../../assets/x-mark-thin.svg') no-repeat;
+  }
+
+  &__text {
+    font-size: 2rem;
+    margin: 0 auto 0 auto;
+    flex-basis: 100%;
+  }
+
+  &__boat {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto 0 auto;
+    flex-basis: 100%;
+    @media screen and (min-width: 768px) {
+      height: 250px;
+      width: 250px;
+    }
+  }
+
+  &__boat--right {
+    background: url(../../assets/boat-right-answer.svg) no-repeat center
+      center/contain;
+  }
+
+  &__boat--wrong {
+    background: url(../../assets/boat-wrong-answer.svg) no-repeat center
+      center/contain;
+  }
+}
