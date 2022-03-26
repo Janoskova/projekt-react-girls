@@ -18,10 +18,12 @@ export const places = [
     id: 1,
     text: 'mys Dobré naděje',
     answer: 'AF',
+    info: 'Mys Dobré naděje jako první Evropan obeplul v roce 1488 Bartolomeu Dias.',
   },
   {
     id: 2,
     text: 'Španělsko',
     answer: 'EU',
+    info: 'Po objevení Ameriky v roce 1492 se Španělsko stalo přední globální supervelmocí.',
   },
 ];

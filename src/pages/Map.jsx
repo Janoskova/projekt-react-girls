@@ -11,9 +11,16 @@ import { useState } from 'react';
 
 const Map = () => {
   const [answer, setAnswer] = useState(null);
+  const [cardIndex, setCardIndex] = useState(0);
+  const place = places[cardIndex];
 
   const showResult = (result) => {
     setAnswer(result);
+  };
+
+  const handleClick = () => {
+    setAnswer(null);
+    setCardIndex(cardIndex + 1);
   };
 
   return (
@@ -38,21 +45,13 @@ const Map = () => {
           </svg>
         </section>
         <section className="map__cards">
-          {places.map((place) => {
-            return (
-              <MapCard text={place.text} key={place.id} answer={place.answer} />
-            );
-          })}
+          {<MapCard text={place.text} key={place.id} answer={place.answer} />}
         </section>
         {answer === true ? (
           <div className="modal">
-            <button
-              onClick={() => setAnswer(null)}
-              className="modal__close"
-            ></button>
-            <p className="modal__text">
-              Skvělé! Doplul jsi na správné místo. Pokračuj dál ve své cestě.
-            </p>
+            <button onClick={handleClick} className="modal__close"></button>
+            <p className="modal__text">Správně! {place.info}</p>
+
             <div className="modal__boat modal__boat--right"></div>
           </div>
         ) : null}
