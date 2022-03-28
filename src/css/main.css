@@ -215,17 +215,54 @@
 .map__container {
   margin: 0 auto 0 auto;
 }
-.map__cards {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
 @media screen and (min-width: 768px) {
   .map__container {
     max-width: 700px;
   }
-  .map__cards {
-    margin-bottom: 80px;
+}
+.map__cards {
+  margin-top: 40px;
+  margin-bottom: 190px;
+}
+
+.assessment {
+  width: 70vw;
+  height: 50vh;
+  margin: auto;
+  background: url(../../assets/ropes.jpg) no-repeat 50% 50%/cover;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .assessment {
+    background-image: url(../../assets/ropes-bigger.jpg);
+    width: 60vw;
   }
+}
+@media screen and (min-width: 1200px) {
+  .assessment {
+    width: 50vw;
+  }
+}
+.assessment__text {
+  font-size: 1.5rem;
+  margin: 0 auto 0 auto;
+  flex-basis: 100%;
+}
+@media screen and (min-width: 768px) {
+  .assessment__text {
+    font-size: 2rem;
+  }
+}
+.assessment__picture {
+  background: url(../../assets/anchor.svg) no-repeat 50% 50%;
+  min-height: 100px;
+  flex-basis: 100%;
 }
 
 .modal {
@@ -260,9 +297,14 @@
   background: transparent url("../../assets/x-mark-thin.svg") no-repeat;
 }
 .modal__text {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0 auto 0 auto;
   flex-basis: 100%;
+}
+@media screen and (min-width: 768px) {
+  .modal__text {
+    font-size: 2rem;
+  }
 }
 .modal__boat {
   height: 150px;

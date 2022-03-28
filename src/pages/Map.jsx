@@ -24,51 +24,66 @@ const Map = () => {
   };
 
   return (
-    <>
-      <div className="map">
-        <h1 className="map__heading">Přesouvání po mapě</h1>
-        <p className="map__instruction">
-          Umísti kartičku na správný kontinent.
-        </p>
-        <section className="map__container">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            version="1"
-            viewBox="0 0 1052.4 580"
-          >
-            <PathNA result={showResult} />
-            <PathAS result={showResult} />
-            <PathAU result={showResult} />
-            <PathAF result={showResult} />
-            <PathEU result={showResult} />
-            <PathSA result={showResult} />
-          </svg>
-        </section>
-        <section className="map__cards">
-          {<MapCard text={place.text} key={place.id} answer={place.answer} />}
-        </section>
-        {answer === true ? (
-          <div className="modal">
-            <button onClick={handleClick} className="modal__close"></button>
-            <p className="modal__text">Správně! {place.info}</p>
+    <div className="map">
+      {place && (
+        <>
+          <h1 className="map__heading">Přesouvání po mapě</h1>
+          <p className="map__instruction">
+            Umísti kartičku na správný kontinent.
+          </p>
+          <section className="map__container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1"
+              viewBox="0 0 1052.4 580"
+            >
+              <PathNA result={showResult} />
+              <PathAS result={showResult} />
+              <PathAU result={showResult} />
+              <PathAF result={showResult} />
+              <PathEU result={showResult} />
+              <PathSA result={showResult} />
+            </svg>
+          </section>
+          <section className="map__cards">
+            {<MapCard text={place.text} key={place.id} answer={place.answer} />}
+          </section>
+          {answer === true ? (
+            <div className="modal">
+              <button onClick={handleClick} className="modal__close"></button>
+              <p className="modal__text">Správně! {place.info}</p>
 
-            <div className="modal__boat modal__boat--right"></div>
-          </div>
-        ) : null}
-        {answer === false ? (
-          <div className="modal">
-            <button
-              onClick={() => setAnswer(null)}
-              className="modal__close"
-            ></button>
-            <p className="modal__text">
-              Doplul jsi do nesprávných vod. Změň své lodi směr a zkus to znova!
-            </p>
-            <div className="modal__boat modal__boat--wrong"></div>
-          </div>
-        ) : null}
-      </div>
-    </>
+              <div className="modal__boat modal__boat--right"></div>
+            </div>
+          ) : null}
+          {answer === false ? (
+            <div className="modal">
+              <button
+                onClick={() => setAnswer(null)}
+                className="modal__close"
+              ></button>
+              <p className="modal__text">
+                Doplul jsi do nesprávných vod. Změň své lodi směr a zkus to
+                znova!
+              </p>
+              <div className="modal__boat modal__boat--wrong"></div>
+            </div>
+          ) : null}
+        </>
+      )}
+      {cardIndex >= places.length && (
+        <div className="assessment">
+          <p className="assessment__text">
+            Skvělé! Jsi znalec zámořských území. Byl by z tebe skvělý
+            mořeplavec.
+          </p>
+          <p className="assessment__text">
+            Otestuj své znalosti další aktivitou.
+          </p>
+          <div className="assessment__picture"></div>
+        </div>
+      )}
+    </div>
   );
 };
 
