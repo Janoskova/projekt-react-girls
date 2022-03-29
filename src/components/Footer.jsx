@@ -5,9 +5,8 @@ const Footer = () => {
     <>
       <footer className="references">
         <div>
-          <span className="references__text">Eva Jánošková</span>
           <span className="references__text">
-            Projekt Mentoringu ReactGirls | 2022.
+            Eva Jánošková | Projekt Mentoringu ReactGirls | 2022.
           </span>
         </div>
         <div>

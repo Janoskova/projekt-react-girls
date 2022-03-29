@@ -57,7 +57,7 @@ const Map = () => {
             </div>
           ) : null}
           {answer === false ? (
-            <div className="modal">
+            <div className="modal modal__wrong">
               <button
                 onClick={() => setAnswer(null)}
                 className="modal__close"
