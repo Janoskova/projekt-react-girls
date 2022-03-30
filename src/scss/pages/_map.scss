@@ -31,7 +31,7 @@
   left: 0;
   right: 0;
   bottom: 176px;
-  background-color: #68afadf3;
+  background-color: $color-primary--lighter;
   border-radius: 15px;
   padding: $spacer;
   display: flex;
@@ -44,7 +44,7 @@
   }
 
   &__wrong {
-    background-color: #eb5e55;
+    background-color: $color-secondary;
   }
 
   &__close {
@@ -83,42 +83,5 @@
   &__boat--wrong {
     background: url(../../assets/boat-wrong-answer.svg) no-repeat center
       center/contain;
-  }
-}
-
-.assessment {
-  width: 80vw;
-  min-height: 400px;
-  margin: $spacer-double auto 176px auto;
-  background: url(../../assets/ropes.jpg) no-repeat 50% 50% / cover;
-  text-align: center;
-  color: white;
-  border-radius: 15px;
-  padding: $spacer;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  @media screen and (min-width: 768px) {
-    background-image: url(../../assets/ropes-bigger.jpg);
-    width: 60vw;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 50vw;
-  }
-
-  &__text {
-    font-size: 1.5rem;
-    margin: 0 auto 0 auto;
-    flex-basis: 100%;
-    @media screen and (min-width: 768px) {
-      font-size: 2rem;
-    }
-  }
-
-  &__picture {
-    background: url(../../assets/anchor.svg) no-repeat 50% 50%;
-    min-height: 100px;
-    flex-basis: 100%;
   }
 }

@@ -1,0 +1,36 @@
+.assessment {
+  position: relative;
+  height: 600px;
+  margin-bottom: 176px;
+  background: url(../../assets/pirate.jpg) no-repeat 50% 50% / cover;
+  text-align: center;
+  color: white;
+
+  @media screen and (min-width: 768px) {
+    height: 700px;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 1000px;
+    background: url(../../assets/pirate-bigger.jpg) no-repeat 50% 50% / cover;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    padding-right: $spacer;
+    padding-left: $spacer;
+    padding-top: $spacer-double;
+    margin: 0;
+    @media screen and (min-width: 768px) {
+      font-size: 2rem;
+    }
+    @media screen and (min-width: 1200px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__picture {
+    background: url(../../assets/anchor.svg) no-repeat 50% 50%;
+    min-height: 100px;
+    margin-top: $spacer-double;
+  }
+}

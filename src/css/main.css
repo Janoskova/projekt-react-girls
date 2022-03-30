@@ -154,6 +154,48 @@
   opacity: 0.5;
 }
 
+.assessment {
+  position: relative;
+  height: 600px;
+  margin-bottom: 176px;
+  background: url(../../assets/pirate.jpg) no-repeat 50% 50%/cover;
+  text-align: center;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .assessment {
+    height: 700px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .assessment {
+    height: 1000px;
+    background: url(../../assets/pirate-bigger.jpg) no-repeat 50% 50%/cover;
+  }
+}
+.assessment__text {
+  font-size: 1.5rem;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 40px;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .assessment__text {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .assessment__text {
+    font-size: 3rem;
+  }
+}
+.assessment__picture {
+  background: url(../../assets/anchor.svg) no-repeat 50% 50%;
+  min-height: 100px;
+  margin-top: 40px;
+}
+
 .storm {
   height: 600px;
   background: url("../../assets/boat.jpg") no-repeat center center/cover;
@@ -288,47 +330,6 @@
 }
 .modal__boat--wrong {
   background: url(../../assets/boat-wrong-answer.svg) no-repeat center center/contain;
-}
-
-.assessment {
-  width: 80vw;
-  min-height: 400px;
-  margin: 40px auto 176px auto;
-  background: url(../../assets/ropes.jpg) no-repeat 50% 50%/cover;
-  text-align: center;
-  color: white;
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .assessment {
-    background-image: url(../../assets/ropes-bigger.jpg);
-    width: 60vw;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .assessment {
-    width: 50vw;
-  }
-}
-.assessment__text {
-  font-size: 1.5rem;
-  margin: 0 auto 0 auto;
-  flex-basis: 100%;
-}
-@media screen and (min-width: 768px) {
-  .assessment__text {
-    font-size: 2rem;
-  }
-}
-.assessment__picture {
-  background: url(../../assets/anchor.svg) no-repeat 50% 50%;
-  min-height: 100px;
-  flex-basis: 100%;
 }
 
 html {

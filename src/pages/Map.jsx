@@ -6,6 +6,7 @@ import PathAU from '../components/PathAU';
 import PathAF from '../components/PathAF';
 import PathEU from '../components/PathEU';
 import PathSA from '../components/PathSA';
+import Assessment from '../components/Assessment';
 import { places } from '../data';
 import { useState } from 'react';
 
@@ -24,9 +25,9 @@ const Map = () => {
   };
 
   return (
-    <div className="map">
+    <>
       {place && (
-        <>
+        <div className="map">
           <h1 className="map__heading">Přesouvání po mapě</h1>
           <p className="map__instruction">
             Umísti kartičku na správný kontinent.
@@ -69,21 +70,10 @@ const Map = () => {
               <div className="modal__boat modal__boat--wrong"></div>
             </div>
           ) : null}
-        </>
-      )}
-      {cardIndex >= places.length && (
-        <div className="assessment">
-          <p className="assessment__text">
-            Skvělé! Jsi znalec zámořských území. Byl by z tebe skvělý
-            mořeplavec.
-          </p>
-          <p className="assessment__text">
-            Otestuj své znalosti další aktivitou.
-          </p>
-          <div className="assessment__picture"></div>
         </div>
       )}
-    </div>
+      {cardIndex >= places.length && <Assessment />}
+    </>
   );
 };
 
