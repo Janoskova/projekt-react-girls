@@ -26,4 +26,10 @@ export const places = [
     answer: 'EU',
     info: 'Po objevení Ameriky v roce 1492 se Španělsko stalo přední globální supervelmocí.',
   },
+  {
+    id: 3,
+    text: 'Ceuta',
+    answer: 'AF',
+    info: 'Maurské město Ceuta bylo první portugalskou kolonií mimo evropské území. Portugalci tak došli k poznání, jak je Afrika bohatá např. na slonovinu a zlato.',
+  },
 ];

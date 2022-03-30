@@ -34,6 +34,12 @@
   background-color: #68afad81;
   border: 1px solid white;
 }
+@media screen and (min-width: 768px) {
+  .navigation__item {
+    background-color: white;
+    border: 0;
+  }
+}
 .navigation__item:hover {
   background-color: #68afad;
 }
@@ -44,10 +50,6 @@
   .navigation__list {
     display: flex;
     justify-content: flex-end;
-  }
-  .navigation__item {
-    background-color: white;
-    border: 0;
   }
 }
 
@@ -83,6 +85,19 @@
 .activity__bubble:hover {
   background-color: #68afad;
 }
+@media screen and (min-width: 768px) {
+  .activity__bubble {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .activity__bubble {
+    width: 350px;
+    height: 350px;
+  }
+}
 .activity__heading {
   color: #262c2c;
 }
@@ -92,6 +107,18 @@
   height: 100px;
   margin: 0 auto 10px auto;
 }
+@media screen and (min-width: 768px) {
+  .activity__hourglass {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .activity__hourglass {
+    width: 200px;
+    height: 200px;
+  }
+}
 .activity__map {
   background: url("../../assets/navigation-map.svg") no-repeat center center/contain;
   width: 100px;
@@ -99,29 +126,12 @@
   margin: auto;
 }
 @media screen and (min-width: 768px) {
-  .activity__bubble {
-    width: 300px;
-    height: 300px;
-    margin: 0;
-  }
-  .activity__hourglass {
-    width: 150px;
-    height: 150px;
-  }
   .activity__map {
     width: 150px;
     height: 150px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .activity__bubble {
-    width: 350px;
-    height: 350px;
-  }
-  .activity__hourglass {
-    width: 200px;
-    height: 200px;
-  }
   .activity__map {
     width: 200px;
     height: 200px;
@@ -201,14 +211,21 @@
   background: url("../../assets/boat.jpg") no-repeat center center/cover;
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .storm {
+    height: 700px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .storm {
+    height: 1000px;
+  }
+}
 .storm__heading {
   text-align: center;
   padding: 20px;
 }
 @media screen and (min-width: 768px) {
-  .storm {
-    height: 700px;
-  }
   .storm__heading {
     position: absolute;
     right: 50%;
@@ -216,9 +233,6 @@
   }
 }
 @media screen and (min-width: 1200px) {
-  .storm {
-    height: 1000px;
-  }
   .storm__heading {
     right: 55%;
     bottom: 60%;
@@ -229,9 +243,6 @@
   text-align: center;
   margin-bottom: 192px;
 }
-.activities__heading {
-  margin-bottom: 40px;
-}
 @media screen and (min-width: 768px) {
   .activities {
     margin-bottom: 212px;
@@ -239,6 +250,11 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+}
+.activities__heading {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
   .activities__heading {
     flex-basis: 100%;
     margin-bottom: 60px;

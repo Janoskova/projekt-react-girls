@@ -6,6 +6,7 @@ import PathAU from '../components/PathAU';
 import PathAF from '../components/PathAF';
 import PathEU from '../components/PathEU';
 import PathSA from '../components/PathSA';
+import ShuffleArray from '../components/ShuffleArray';
 import Assessment from '../components/Assessment';
 import { places } from '../data';
 import { useState } from 'react';
@@ -13,7 +14,8 @@ import { useState } from 'react';
 const Map = () => {
   const [answer, setAnswer] = useState(null);
   const [cardIndex, setCardIndex] = useState(0);
-  const place = places[cardIndex];
+  const [shuffledPlaces] = useState(ShuffleArray(places));
+  const place = shuffledPlaces[cardIndex];
 
   const showResult = (result) => {
     setAnswer(result);
