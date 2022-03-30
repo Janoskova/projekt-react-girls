@@ -22,8 +22,20 @@
   margin: 0;
   padding: 0;
 }
+@media screen and (min-width: 768px) {
+  .navigation__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 .navigation__list--opened {
   display: block;
+}
+@media screen and (min-width: 768px) {
+  .navigation__list--opened {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 .navigation__item {
   display: block;
@@ -45,12 +57,6 @@
 }
 .navigation__item--active {
   font-weight: bold;
-}
-@media screen and (min-width: 768px) {
-  .navigation__list {
-    display: flex;
-    justify-content: flex-end;
-  }
 }
 
 .references {

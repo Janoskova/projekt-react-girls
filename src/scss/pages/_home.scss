@@ -14,11 +14,13 @@
   &__heading {
     text-align: center;
     padding: $spacer;
+
     @media screen and (min-width: 768px) {
       position: absolute;
       right: 50%;
       bottom: 60%;
     }
+
     @media screen and (min-width: 1200px) {
       right: 55%;
       bottom: 60%;
@@ -29,6 +31,7 @@
 .activities {
   text-align: center;
   margin-bottom: 192px;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 212px;
     display: flex;
@@ -38,6 +41,7 @@
 
   &__heading {
     margin-bottom: $spacer-double;
+
     @media screen and (min-width: 768px) {
       flex-basis: 100%;
       margin-bottom: 60px;

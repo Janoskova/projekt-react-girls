@@ -25,10 +25,20 @@
     display: none;
     margin: 0;
     padding: 0;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   &__list--opened {
     display: block;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   &__item {
@@ -39,6 +49,7 @@
     padding: $spacer;
     background-color: #68afad81;
     border: 1px solid white;
+
     @media screen and (min-width: 768px) {
       background-color: white;
       border: 0;
@@ -51,12 +62,5 @@
 
   &__item--active {
     font-weight: bold;
-  }
-
-  @media screen and (min-width: 768px) {
-    &__list {
-      display: flex;
-      justify-content: flex-end;
-    }
   }
 }
