@@ -5,7 +5,7 @@ import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 import './scss/main.scss';
 import Header from './components/Header';
 import Home from './pages/Home';
-import Arranging from './pages/Arranging';
+import Ordering from './pages/Ordering';
 import Map from './pages/Map';
 import Footer from './components/Footer';
 
@@ -20,7 +20,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/razeni">
-              <Arranging />
+              <Ordering />
             </Route>
             <Route path="/presouvani">
               <Map />
