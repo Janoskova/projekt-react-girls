@@ -33,3 +33,31 @@ export const places = [
     info: 'Maurské město Ceuta bylo první portugalskou kolonií mimo evropské území. Portugalci tak došli k poznání, jak je Afrika bohatá např. na slonovinu a zlato.',
   },
 ];
+
+export const events = [
+  {
+    id: 1,
+    options: [
+      {
+        event: 'Objevení Ameriky K. Kolumbusem',
+        order: 3,
+        year: '1492',
+      },
+      {
+        event: 'Obeplutí mysu Dobré naděje B. Diasem',
+        order: 2,
+        year: '1488',
+      },
+      {
+        event: 'Doplutí Vikingů do Sev. Ameriky',
+        order: 1,
+        year: 'kolem r. 1000',
+      },
+      {
+        event: 'Tordesillaská smlouva',
+        order: 4,
+        year: '1494',
+      },
+    ],
+  },
+];

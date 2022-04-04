@@ -238,6 +238,12 @@
     width: 50vw;
   }
 }
+.modal__right {
+  background-color: rgba(104, 175, 173, 0.9529411765);
+}
+.modal__wrong {
+  background-color: #eb5e55;
+}
 .modal__close {
   width: 2rem;
   height: 2rem;
@@ -261,25 +267,17 @@
   margin: 0 auto 0 auto;
   flex-basis: 100%;
 }
+.modal__boat--right {
+  background: url(../../assets/boat-right-answer.svg) no-repeat center center/contain;
+}
+.modal__boat--wrong {
+  background: url(../../assets/boat-wrong-answer.svg) no-repeat center center/contain;
+}
 @media screen and (min-width: 768px) {
   .modal__boat {
     height: 150px;
     width: 150px;
   }
-}
-
-.modal__right {
-  background-color: rgba(104, 175, 173, 0.9529411765);
-}
-.modal__boat--right {
-  background: url(../../assets/boat-right-answer.svg) no-repeat center center/contain;
-}
-
-.modal__wrong {
-  background-color: #eb5e55;
-}
-.modal__boat--wrong {
-  background: url(../../assets/boat-wrong-answer.svg) no-repeat center center/contain;
 }
 
 .storm {
@@ -401,6 +399,9 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+}
+.ordering__card--light {
+  opacity: 0.5;
 }
 
 html {

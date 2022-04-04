@@ -21,6 +21,14 @@
     width: 50vw;
   }
 
+  &__right {
+    background-color: $color-primary--lighter;
+  }
+
+  &__wrong {
+    background-color: $color-secondary;
+  }
+
   &__close {
     width: 2rem;
     height: 2rem;
@@ -44,6 +52,16 @@
     width: 100px;
     margin: 0 auto 0 auto;
     flex-basis: 100%;
+
+    &--right {
+      background: url(../../assets/boat-right-answer.svg) no-repeat center
+        center/contain;
+    }
+
+    &--wrong {
+      background: url(../../assets/boat-wrong-answer.svg) no-repeat center
+        center/contain;
+    }
 
     @media screen and (min-width: 768px) {
       height: 150px;

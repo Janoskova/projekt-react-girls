@@ -6,8 +6,7 @@ import PathAU from '../components/PathAU';
 import PathAF from '../components/PathAF';
 import PathEU from '../components/PathEU';
 import PathSA from '../components/PathSA';
-import ModalRight from '../components/ModalRight';
-import ModalWrong from '../components/ModalWrong';
+import Modal from '../components/Modal';
 import ShuffleArray from '../utils/ShuffleArray';
 import Assessment from '../components/Assessment';
 import { places } from '../data';
@@ -23,13 +22,11 @@ const Map = () => {
     setAnswer(result);
   };
 
-  const closeModalRight = (closeRight) => {
-    setAnswer(closeRight);
-    setCardIndex(cardIndex + 1);
-  };
-
-  const closeModalWrong = (closeWrong) => {
-    setAnswer(closeWrong);
+  const closeModal = (close) => {
+    setAnswer(close);
+    if (answer === true) {
+      setCardIndex(cardIndex + 1);
+    }
   };
 
   return (
@@ -57,11 +54,8 @@ const Map = () => {
           <section className="map__cards">
             {<MapCard text={place.text} key={place.id} answer={place.answer} />}
           </section>
-          {answer === true ? (
-            <ModalRight closeRight={closeModalRight} info={place.info} />
-          ) : null}
-          {answer === false ? (
-            <ModalWrong closeWrong={closeModalWrong} />
+          {answer !== null ? (
+            <Modal close={closeModal} info={place.info} reply={answer} />
           ) : null}
         </div>
       )}
