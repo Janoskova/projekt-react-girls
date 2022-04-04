@@ -1,0 +1,10 @@
+.modal {
+  &__wrong {
+    background-color: $color-secondary;
+  }
+
+  &__boat--wrong {
+    background: url(../../assets/boat-wrong-answer.svg) no-repeat center
+      center/contain;
+  }
+}

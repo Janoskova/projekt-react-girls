@@ -6,7 +6,9 @@ import PathAU from '../components/PathAU';
 import PathAF from '../components/PathAF';
 import PathEU from '../components/PathEU';
 import PathSA from '../components/PathSA';
-import ShuffleArray from '../components/ShuffleArray';
+import ModalRight from '../components/ModalRight';
+import ModalWrong from '../components/ModalWrong';
+import ShuffleArray from '../utils/ShuffleArray';
 import Assessment from '../components/Assessment';
 import { places } from '../data';
 import { useState } from 'react';
@@ -21,9 +23,13 @@ const Map = () => {
     setAnswer(result);
   };
 
-  const handleClick = () => {
-    setAnswer(null);
+  const closeModalRight = (closeRight) => {
+    setAnswer(closeRight);
     setCardIndex(cardIndex + 1);
+  };
+
+  const closeModalWrong = (closeWrong) => {
+    setAnswer(closeWrong);
   };
 
   return (
@@ -52,25 +58,10 @@ const Map = () => {
             {<MapCard text={place.text} key={place.id} answer={place.answer} />}
           </section>
           {answer === true ? (
-            <div className="modal">
-              <button onClick={handleClick} className="modal__close"></button>
-              <p className="modal__text">Správně! {place.info}</p>
-
-              <div className="modal__boat modal__boat--right"></div>
-            </div>
+            <ModalRight closeRight={closeModalRight} info={place.info} />
           ) : null}
           {answer === false ? (
-            <div className="modal modal__wrong">
-              <button
-                onClick={() => setAnswer(null)}
-                className="modal__close"
-              ></button>
-              <p className="modal__text">
-                Doplul jsi do nesprávných vod. Změň své lodi směr a zkus to
-                znova!
-              </p>
-              <div className="modal__boat modal__boat--wrong"></div>
-            </div>
+            <ModalWrong closeWrong={closeModalWrong} />
           ) : null}
         </div>
       )}

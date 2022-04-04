@@ -26,7 +26,7 @@ const Ordering = () => {
         </div>
         <div className="ordering__card">
           <span className="ordering__event">
-            Doplutí Vikingů do Sev. Ameriky{' '}
+            Doplutí Vikingů do Sev. Ameriky
           </span>
           <span className="ordering__year">kolem r. 1000</span>
         </div>
