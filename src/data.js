@@ -37,7 +37,7 @@ export const places = [
 export const events = [
   {
     id: 1,
-    options: [
+    cards: [
       {
         event: 'Objevení Ameriky K. Kolumbusem',
         order: 3,

@@ -1,10 +1,10 @@
 import React from 'react';
 import WaveIcon from '../components/WaveIcon';
-import OrderingCardSet from '../components/OrderingCardSet';
+import OrderingCard from '../components/OrderingCard';
 import { events } from '../data';
 
 const Ordering = () => {
-  const item = events[0];
+  const cardSet = events[0];
 
   return (
     <main className="ordering">
@@ -16,7 +16,16 @@ const Ordering = () => {
         <p className="ordering__scaleText">Kartičky přesuňte sem</p>
       </section>
       <section className="ordering__cards">
-        <OrderingCardSet data={item.options} />
+        {cardSet.cards.map((item) => {
+          return (
+            <OrderingCard
+              order={item.order}
+              key={item.order}
+              event={item.event}
+              year={item.year}
+            />
+          );
+        })}
       </section>
       <WaveIcon />
     </main>

@@ -34,20 +34,4 @@
     margin: 0;
     padding: 10px;
   }
-
-  &__card {
-    max-width: 300px;
-    background-color: white;
-    padding: 5px 10px 5px 10px;
-    border-radius: 15px;
-    border: 2px solid $color-primary;
-    margin: 10px auto 10px auto;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-
-  &__card--light {
-    opacity: 0.5;
-  }
 }

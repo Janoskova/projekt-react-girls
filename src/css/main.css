@@ -171,6 +171,21 @@
   opacity: 0.5;
 }
 
+.ordering__card {
+  max-width: 300px;
+  background-color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  border: 2px solid #68afad;
+  margin: 10px auto 10px auto;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.ordering__card--light {
+  opacity: 0.5;
+}
+
 .assessment {
   position: relative;
   height: 600px;
@@ -388,20 +403,6 @@
 .ordering__scaleText {
   margin: 0;
   padding: 10px;
-}
-.ordering__card {
-  max-width: 300px;
-  background-color: white;
-  padding: 5px 10px 5px 10px;
-  border-radius: 15px;
-  border: 2px solid #68afad;
-  margin: 10px auto 10px auto;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.ordering__card--light {
-  opacity: 0.5;
 }
 
 html {
