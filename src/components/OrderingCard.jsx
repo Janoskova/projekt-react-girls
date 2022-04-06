@@ -4,7 +4,7 @@ import ItemTypes from '../utils/items';
 
 const OrderingCard = ({ order, event, year }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
-    type: ItemTypes.EVENT,
+    type: ItemTypes.CARD,
     item: { order: order },
     collect: (monitor) => ({ isDragging: !!monitor.isDragging() }),
   }));

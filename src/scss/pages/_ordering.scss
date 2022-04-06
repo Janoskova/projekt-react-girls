@@ -23,15 +23,19 @@
 
   &__scale {
     max-width: 310px;
-    min-height: 200px;
+    min-height: 250px;
     background-color: white;
     border-radius: 15px;
     border: 2px solid $color-primary;
     margin: $spacer auto $spacer auto;
   }
 
+  &__scale--active {
+    background-color: $color-primary;
+  }
+
   &__scaleText {
     margin: 0;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
   }
 }

@@ -394,15 +394,18 @@
 }
 .ordering__scale {
   max-width: 310px;
-  min-height: 200px;
+  min-height: 250px;
   background-color: white;
   border-radius: 15px;
   border: 2px solid #68afad;
   margin: 20px auto 20px auto;
 }
+.ordering__scale--active {
+  background-color: #68afad;
+}
 .ordering__scaleText {
   margin: 0;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 
 html {
