@@ -1,31 +1,46 @@
 import React from 'react';
 import { useState } from 'react';
-import { useDrop } from 'react-dnd';
 import { events } from '../data';
 import OrderingCard from '../components/OrderingCard';
+import OrderingBox from '../components/OrderingBox';
 import WaveIcon from '../components/WaveIcon';
 
 const Ordering = () => {
-  const cardSet = events[0];
-  const [scale, setScale] = useState([]);
-  const [cardContainer, setCardContainer] = useState(cardSet);
+  const cardSet = events[0].cards;
+  const [items, setItems] = useState(cardSet);
 
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: 'card',
-    drop: (item) => addCardToScale(item.order),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
+  const moveCardHandler = (dragIndex, hoverIndex) => {
+    const dragItem = items[dragIndex];
 
-  const addCardToScale = (order) => {
-    const cardList = cardSet.cards.filter((card) => card.order === order);
-    setScale((scale) => [...scale, cardList[0]]);
-    const indexOfObject = cardContainer.cards.findIndex((object) => {
-      return object.order === order;
-    });
-    cardContainer.cards.splice(indexOfObject, 1);
-    setCardContainer(cardContainer);
+    if (dragItem) {
+      setItems((prevState) => {
+        const coppiedStateArray = [...prevState];
+
+        // remove item by "hoverIndex" and put "dragItem" instead
+        const prevItem = coppiedStateArray.splice(hoverIndex, 1, dragItem);
+
+        // remove item by "dragIndex" and put "prevItem" instead
+        coppiedStateArray.splice(dragIndex, 1, prevItem[0]);
+
+        return coppiedStateArray;
+      });
+    }
+  };
+
+  const returnItemsForBox = (boxName) => {
+    return items
+      .filter((item) => item.box === boxName)
+      .map((item, index) => (
+        <OrderingCard
+          key={item.order}
+          event={item.event}
+          year={item.year}
+          name={item.name}
+          setItems={setItems}
+          index={index}
+          moveCardHandler={moveCardHandler}
+        />
+      ));
   };
 
   return (
@@ -34,36 +49,13 @@ const Ordering = () => {
       <p className="ordering__instruction">
         Seřaďte události tak, aby nejstarší byla nahoře.
       </p>
-      <section
-        ref={drop}
-        className={
-          isOver ? 'ordering__scale ordering__scale--active' : 'ordering__scale'
-        }
-      >
+      <OrderingBox title="Box 2" className="ordering__scale">
         <p className="ordering__scaleText">Kartičky přesuňte sem</p>
-        {scale.map((item) => {
-          return (
-            <OrderingCard
-              order={item.order}
-              key={item.order}
-              event={item.event}
-              year={item.year}
-            />
-          );
-        })}
-      </section>
-      <section className="ordering__cards">
-        {cardContainer.cards.map((item) => {
-          return (
-            <OrderingCard
-              order={item.order}
-              key={item.order}
-              event={item.event}
-              year={item.year}
-            />
-          );
-        })}
-      </section>
+        {returnItemsForBox('Box 2')}
+      </OrderingBox>
+      <OrderingBox title="Box 1" className="ordering__cards">
+        {returnItemsForBox('Box 1')}
+      </OrderingBox>
       <WaveIcon />
     </main>
   );
