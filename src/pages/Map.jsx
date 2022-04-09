@@ -1,4 +1,7 @@
 import React from 'react';
+import { places } from '../data';
+import { useState } from 'react';
+import ShuffleArray from '../utils/ShuffleArray';
 import MapCard from '../components/MapCard';
 import PathNA from '../components/PathNA';
 import PathAS from '../components/PathAS';
@@ -7,10 +10,7 @@ import PathAF from '../components/PathAF';
 import PathEU from '../components/PathEU';
 import PathSA from '../components/PathSA';
 import Modal from '../components/Modal';
-import ShuffleArray from '../utils/ShuffleArray';
 import Assessment from '../components/Assessment';
-import { places } from '../data';
-import { useState } from 'react';
 
 const Map = () => {
   const [answer, setAnswer] = useState(null);

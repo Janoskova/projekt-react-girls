@@ -23,22 +23,35 @@
 
   &__scale {
     max-width: 310px;
-    min-height: 290px;
+    min-height: 250px;
     background-color: white;
     border-radius: 15px;
     border: 2px solid $color-primary;
     margin: $spacer auto $spacer auto;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
   }
 
-  &__scale--active {
-    background-color: $color-primary;
+  &__navigation {
+    max-width: 310px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  &__scaleText {
-    margin: 0;
-    padding: 10px 10px 0 10px;
+  &__button {
+    height: 38px;
+    background-color: white;
+    margin-bottom: $spacer;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    border: 2px solid $color-primary;
+    font-weight: bold;
+    font-family: $font-main;
+    font-size: 1rem;
+    flex-basis: 80%;
+    cursor: pointer;
   }
 }

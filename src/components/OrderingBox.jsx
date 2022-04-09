@@ -1,14 +1,13 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
-const OrderingBox = ({ children, className, title }) => {
+const OrderingBox = ({ children }) => {
   const [, drop] = useDrop({
     accept: 'card',
-    drop: () => ({ name: title }),
   });
 
   return (
-    <section ref={drop} className={className}>
+    <section ref={drop} className="ordering__scale">
       {children}
     </section>
   );

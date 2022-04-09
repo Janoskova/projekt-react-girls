@@ -1,7 +1,7 @@
 import React from 'react';
-import WaveIcon from '../components/WaveIcon';
 import { activities } from '../data';
 import Activity from '../components/Activity';
+import WaveIcon from '../components/WaveIcon';
 
 const Home = () => {
   return (

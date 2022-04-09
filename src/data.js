@@ -24,7 +24,7 @@ export const places = [
     id: 2,
     text: 'Španělsko',
     answer: 'EU',
-    info: 'Po objevení Ameriky v roce 1492 se Španělsko stalo přední globální supervelmocí.',
+    info: 'Díky získaným územím v Americe španělský král Karel V. prohlašoval: „Nad mojí říší Slunce nezapadá!“',
   },
   {
     id: 3,
@@ -35,37 +35,48 @@ export const places = [
 ];
 
 export const events = [
-  {
-    id: 1,
-    cards: [
-      {
-        event: 'Objevení Ameriky K. Kolumbusem',
-        order: 3,
-        year: '1492',
-        name: 'Item 1',
-        box: 'Box 1',
-      },
-      {
-        event: 'Obeplutí mysu Dobré naděje B. Diasem',
-        order: 2,
-        year: '1488',
-        name: 'Item 2',
-        box: 'Box 1',
-      },
-      {
-        event: 'Doplutí Vikingů do Sev. Ameriky',
-        order: 1,
-        year: 'kolem r. 1000',
-        name: 'Item 3',
-        box: 'Box 1',
-      },
-      {
-        event: 'Tordesillaská smlouva',
-        order: 4,
-        year: '1494',
-        name: 'Item 4',
-        box: 'Box 1',
-      },
-    ],
-  },
+  [
+    {
+      event: 'Objevení Ameriky K. Kolumbusem',
+      order: 3,
+      year: '1492',
+    },
+    {
+      event: 'Obeplutí mysu Dobré naděje B. Diasem',
+      order: 2,
+      year: '1488',
+    },
+    {
+      event: 'Doplutí Vikingů do Sev. Ameriky',
+      order: 1,
+      year: 'kolem r. 1000',
+    },
+    {
+      event: 'Tordesillaská smlouva',
+      order: 4,
+      year: '1494',
+    },
+  ],
+  [
+    {
+      event: 'Plavby J. Cooka do Tichomoří',
+      order: 4,
+      year: '2. pol. 18. stol.',
+    },
+    {
+      event: 'Doplutí Vasco de Gama do Indie.',
+      order: 2,
+      year: '1498',
+    },
+    {
+      event: 'Začátek dobývání říše Aztéků.',
+      order: 3,
+      year: '1519',
+    },
+    {
+      event: 'Doplutí Vikingů do Grónska',
+      order: 1,
+      year: 'kolem r. 875',
+    },
+  ],
 ];

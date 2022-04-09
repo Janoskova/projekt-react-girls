@@ -6,22 +6,11 @@ import ItemTypes from '../utils/items';
 const OrderingCard = ({
   event,
   year,
-  setItems,
-  name,
+  order,
   index,
   moveCardHandler,
+  check,
 }) => {
-  const changeItemBox = (currentItem, boxName) => {
-    setItems((prevState) => {
-      return prevState.map((e) => {
-        return {
-          ...e,
-          box: e.name === currentItem.name ? boxName : e.box,
-        };
-      });
-    });
-  };
-
   const ref = useRef(null);
 
   const [, drop] = useDrop({
@@ -68,15 +57,7 @@ const OrderingCard = ({
 
   const [{ isDragging }, drag] = useDrag({
     type: ItemTypes.CARD,
-    item: { index, name },
-    end: (item, monitor) => {
-      const dropResult = monitor.getDropResult();
-      if (dropResult && dropResult.name === 'Box 1') {
-        changeItemBox(item, 'Box 1');
-      } else {
-        changeItemBox(item, 'Box 2');
-      }
-    },
+    item: { index, order },
     collect: (monitor) => ({ isDragging: monitor.isDragging() }),
   });
 
@@ -90,7 +71,7 @@ const OrderingCard = ({
       }
     >
       <span className="ordering__event">{event}</span>
-      <span className="ordering__year">{year}</span>
+      {check ? <span className="ordering__year">{year}</span> : null}
     </div>
   );
 };

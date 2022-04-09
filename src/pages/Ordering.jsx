@@ -1,13 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 import { events } from '../data';
+import ShuffleArray from '../utils/ShuffleArray';
 import OrderingCard from '../components/OrderingCard';
 import OrderingBox from '../components/OrderingBox';
 import WaveIcon from '../components/WaveIcon';
 
 const Ordering = () => {
-  const cardSet = events[0].cards;
-  const [items, setItems] = useState(cardSet);
+  let cardIndex = 0;
+  const [shuffledCardSets] = useState(ShuffleArray(events));
+  const [items, setItems] = useState(shuffledCardSets[cardIndex]);
+  const [check, setCheck] = useState(false);
 
   const moveCardHandler = (dragIndex, hoverIndex) => {
     const dragItem = items[dragIndex];
@@ -22,25 +25,16 @@ const Ordering = () => {
         // remove item by "dragIndex" and put "prevItem" instead
         coppiedStateArray.splice(dragIndex, 1, prevItem[0]);
 
+        console.log(coppiedStateArray);
         return coppiedStateArray;
       });
     }
   };
 
-  const returnItemsForBox = (boxName) => {
-    return items
-      .filter((item) => item.box === boxName)
-      .map((item, index) => (
-        <OrderingCard
-          key={item.order}
-          event={item.event}
-          year={item.year}
-          name={item.name}
-          setItems={setItems}
-          index={index}
-          moveCardHandler={moveCardHandler}
-        />
-      ));
+  const handleClick = () => {
+    setItems(shuffledCardSets[cardIndex + 1]);
+    console.log(cardIndex);
+    setCheck(false);
   };
 
   return (
@@ -49,13 +43,29 @@ const Ordering = () => {
       <p className="ordering__instruction">
         Seřaďte události tak, aby nejstarší byla nahoře.
       </p>
-      <OrderingBox title="Box 2" className="ordering__scale">
-        <p className="ordering__scaleText">Kartičky přesuňte sem</p>
-        {returnItemsForBox('Box 2')}
+      <OrderingBox>
+        {items.map((item, index) => (
+          <OrderingCard
+            key={item.order}
+            event={item.event}
+            year={item.year}
+            order={item.order}
+            index={index}
+            moveCardHandler={moveCardHandler}
+            check={check}
+          />
+        ))}
       </OrderingBox>
-      <OrderingBox title="Box 1" className="ordering__cards">
-        {returnItemsForBox('Box 1')}
-      </OrderingBox>
+      <nav className="ordering__navigation">
+        <button onClick={() => setCheck(true)} className="ordering__button">
+          Zkontrolovat
+        </button>
+        {check ? (
+          <button onClick={handleClick} className="ordering__button">
+            Další
+          </button>
+        ) : null}
+      </nav>
       <WaveIcon />
     </main>
   );

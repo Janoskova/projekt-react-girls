@@ -1,15 +1,4 @@
 .ordering {
-  &__cards {
-    border: 2px solid red;
-    max-width: 310px;
-    min-height: 200px;
-    margin: 0 auto 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
   &__card {
     width: 300px;
     height: 38px;
@@ -25,5 +14,9 @@
 
   &__card--light {
     opacity: 0.5;
+  }
+
+  &__year {
+    font-weight: bold;
   }
 }
