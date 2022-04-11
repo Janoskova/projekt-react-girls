@@ -41,10 +41,16 @@
     justify-content: center;
   }
 
+  &__navigation--twoButtons {
+    max-width: 310px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__button {
     height: 38px;
     background-color: white;
-    margin-bottom: $spacer;
     padding: 5px 10px 5px 10px;
     border-radius: 15px;
     border: 2px solid $color-primary;
@@ -52,6 +58,19 @@
     font-family: $font-main;
     font-size: 1rem;
     flex-basis: 80%;
+    cursor: pointer;
+  }
+
+  &__button--smaller {
+    width: 145px;
+    height: 38px;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    border: 2px solid $color-primary;
+    font-weight: bold;
+    font-family: $font-main;
+    font-size: 1rem;
     cursor: pointer;
   }
 }

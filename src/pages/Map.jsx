@@ -59,7 +59,13 @@ const Map = () => {
           ) : null}
         </div>
       )}
-      {cardIndex >= places.length && <Assessment />}
+      {cardIndex >= places.length && (
+        <Assessment
+          text={
+            'Skvělé! Jsi znalec zámořských území. Byl by z tebe skvělý mořeplavec.'
+          }
+        />
+      )}
     </>
   );
 };

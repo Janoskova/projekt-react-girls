@@ -38,45 +38,67 @@ export const events = [
   [
     {
       event: 'Objevení Ameriky K. Kolumbusem',
-      order: 3,
+      order: 2,
       year: '1492',
     },
     {
       event: 'Obeplutí mysu Dobré naděje B. Diasem',
-      order: 2,
+      order: 1,
       year: '1488',
     },
     {
       event: 'Doplutí Vikingů do Sev. Ameriky',
-      order: 1,
+      order: 0,
       year: 'kolem r. 1000',
     },
     {
       event: 'Tordesillaská smlouva',
-      order: 4,
+      order: 3,
       year: '1494',
     },
   ],
   [
     {
       event: 'Plavby J. Cooka do Tichomoří',
-      order: 4,
+      order: 3,
       year: '2. pol. 18. stol.',
     },
     {
       event: 'Doplutí Vasco de Gama do Indie.',
-      order: 2,
+      order: 1,
       year: '1498',
     },
     {
       event: 'Začátek dobývání říše Aztéků.',
-      order: 3,
+      order: 2,
       year: '1519',
     },
     {
       event: 'Doplutí Vikingů do Grónska',
-      order: 1,
+      order: 0,
       year: 'kolem r. 875',
+    },
+  ],
+  [
+    {
+      event: 'Začátek dobývání Incké říše.',
+      order: 2,
+      year: '1532',
+    },
+    {
+      event: 'Obeplutí mysu Bojador',
+      order: 0,
+      year: '1433',
+    },
+    {
+      event: 'Začátek novověku',
+      order: 1,
+      year: '1492',
+    },
+    {
+      event: 'Poražení španělské Neporazitelné armády',
+      order: 3,
+      year: '1588',
     },
   ],
 ];

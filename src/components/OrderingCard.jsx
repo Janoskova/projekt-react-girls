@@ -57,20 +57,28 @@ const OrderingCard = ({
 
   const [{ isDragging }, drag] = useDrag({
     type: ItemTypes.CARD,
-    item: { index, order },
+    item: { index },
     collect: (monitor) => ({ isDragging: monitor.isDragging() }),
   });
 
   drag(drop(ref));
 
+  const opacity = isDragging ? 0.5 : 1;
+
+  let cardClass;
+  if (check === true) {
+    if (index === order) {
+      cardClass = `ordering__card ordering__card--right`;
+    } else {
+      cardClass = `ordering__card ordering__card--wrong`;
+    }
+  } else {
+    cardClass = `ordering__card`;
+  }
+
   return (
-    <div
-      ref={ref}
-      className={
-        isDragging ? 'ordering__card ordering__card--light' : 'ordering__card'
-      }
-    >
-      <span className="ordering__event">{event}</span>
+    <div ref={ref} className={cardClass} style={{ opacity }}>
+      <span>{event}</span>
       {check ? <span className="ordering__year">{year}</span> : null}
     </div>
   );

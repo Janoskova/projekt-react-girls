@@ -183,8 +183,11 @@
   justify-content: space-between;
   cursor: pointer;
 }
-.ordering__card--light {
-  opacity: 0.5;
+.ordering__card--right {
+  background-color: #68afad;
+}
+.ordering__card--wrong {
+  background-color: #eb5e55;
 }
 .ordering__year {
   font-weight: bold;
@@ -414,10 +417,15 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.ordering__navigation--twoButtons {
+  max-width: 310px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
 .ordering__button {
   height: 38px;
   background-color: white;
-  margin-bottom: 20px;
   padding: 5px 10px 5px 10px;
   border-radius: 15px;
   border: 2px solid #68afad;
@@ -425,6 +433,18 @@
   font-family: "Grenze Gotisch", cursive;
   font-size: 1rem;
   flex-basis: 80%;
+  cursor: pointer;
+}
+.ordering__button--smaller {
+  width: 145px;
+  height: 38px;
+  background-color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  border: 2px solid #68afad;
+  font-weight: bold;
+  font-family: "Grenze Gotisch", cursive;
+  font-size: 1rem;
   cursor: pointer;
 }
 

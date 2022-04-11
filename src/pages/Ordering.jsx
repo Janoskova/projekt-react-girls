@@ -5,9 +5,10 @@ import ShuffleArray from '../utils/ShuffleArray';
 import OrderingCard from '../components/OrderingCard';
 import OrderingBox from '../components/OrderingBox';
 import WaveIcon from '../components/WaveIcon';
+import Assessment from '../components/Assessment';
 
 const Ordering = () => {
-  let cardIndex = 0;
+  const [cardIndex, setCardIndex] = useState(0);
   const [shuffledCardSets] = useState(ShuffleArray(events));
   const [items, setItems] = useState(shuffledCardSets[cardIndex]);
   const [check, setCheck] = useState(false);
@@ -25,49 +26,70 @@ const Ordering = () => {
         // remove item by "dragIndex" and put "prevItem" instead
         coppiedStateArray.splice(dragIndex, 1, prevItem[0]);
 
-        console.log(coppiedStateArray);
         return coppiedStateArray;
       });
     }
   };
 
-  const handleClick = () => {
+  const handleNext = () => {
+    setCardIndex(cardIndex + 1);
     setItems(shuffledCardSets[cardIndex + 1]);
-    console.log(cardIndex);
     setCheck(false);
   };
 
   return (
-    <main className="ordering">
-      <h1 className="ordering__heading">Chronologické řazení</h1>
-      <p className="ordering__instruction">
-        Seřaďte události tak, aby nejstarší byla nahoře.
-      </p>
-      <OrderingBox>
-        {items.map((item, index) => (
-          <OrderingCard
-            key={item.order}
-            event={item.event}
-            year={item.year}
-            order={item.order}
-            index={index}
-            moveCardHandler={moveCardHandler}
-            check={check}
-          />
-        ))}
-      </OrderingBox>
-      <nav className="ordering__navigation">
-        <button onClick={() => setCheck(true)} className="ordering__button">
-          Zkontrolovat
-        </button>
-        {check ? (
-          <button onClick={handleClick} className="ordering__button">
-            Další
-          </button>
-        ) : null}
-      </nav>
-      <WaveIcon />
-    </main>
+    <>
+      {items && (
+        <main className="ordering">
+          <h1 className="ordering__heading">Chronologické řazení</h1>
+          <p className="ordering__instruction">
+            Seřaďte události tak, aby nejstarší byla nahoře.
+          </p>
+          <OrderingBox>
+            {items.map((item, index) => (
+              <OrderingCard
+                key={item.order}
+                event={item.event}
+                year={item.year}
+                order={item.order}
+                index={index}
+                moveCardHandler={moveCardHandler}
+                check={check}
+              />
+            ))}
+          </OrderingBox>
+          <nav
+            className={
+              check
+                ? 'ordering__navigation--twoButtons'
+                : 'ordering__navigation'
+            }
+          >
+            <button
+              onClick={() => setCheck(true)}
+              className={
+                check ? 'ordering__button--smaller' : 'ordering__button'
+              }
+              disabled={check === true}
+            >
+              Zkontrolovat
+            </button>
+            {check ? (
+              <button
+                onClick={handleNext}
+                className="ordering__button--smaller"
+              >
+                Další
+              </button>
+            ) : null}
+          </nav>
+          <WaveIcon />
+        </main>
+      )}
+      {cardIndex >= shuffledCardSets.length && (
+        <Assessment text={'Skvělé! Jsi znalec zámořských objevů.'} />
+      )}
+    </>
   );
 };
 

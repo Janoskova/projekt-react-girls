@@ -10,10 +10,14 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-  }
 
-  &__card--light {
-    opacity: 0.5;
+    &--right {
+      background-color: $color-primary;
+    }
+
+    &--wrong {
+      background-color: $color-secondary;
+    }
   }
 
   &__year {
