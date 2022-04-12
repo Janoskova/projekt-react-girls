@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { DndProvider } from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 import './scss/main.scss';
+import ScrollToTop from './utils/ScrollToTop';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Ordering from './pages/Ordering';
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <DndProvider options={HTML5toTouch}>
+        <ScrollToTop />
         <Header />
         <main>
           <Switch>

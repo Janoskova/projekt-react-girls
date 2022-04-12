@@ -4,8 +4,17 @@
   position: relative;
 
   &__instruction {
-    margin: $spacer 0 $spacer-double 0;
+    margin: $spacer 0 $spacer 0;
     font-size: 1.5rem;
+  }
+
+  &__scoreboard {
+    margin-bottom: $spacer;
+    font-size: 1.3rem;
+  }
+
+  &__rightAnswerPoints {
+    padding-right: 10px;
   }
 
   &__container {
@@ -19,5 +28,9 @@
   &__cards {
     margin-top: $spacer;
     padding-bottom: 176px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 0;
+    }
   }
 }

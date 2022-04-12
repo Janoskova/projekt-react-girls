@@ -144,15 +144,6 @@
   }
 }
 
-.northAmerica:hover,
-.southAmerica:hover,
-.europe:hover,
-.asia:hover,
-.australia:hover,
-.africa:hover {
-  fill: #262c2c;
-}
-
 .wave {
   display: block;
   position: absolute;
@@ -363,8 +354,15 @@
   position: relative;
 }
 .map__instruction {
-  margin: 20px 0 40px 0;
+  margin: 20px 0 20px 0;
   font-size: 1.5rem;
+}
+.map__scoreboard {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+.map__rightAnswerPoints {
+  padding-right: 10px;
 }
 .map__container {
   margin: 0 auto 0 auto;
@@ -377,6 +375,11 @@
 .map__cards {
   margin-top: 20px;
   padding-bottom: 176px;
+}
+@media screen and (min-width: 768px) {
+  .map__cards {
+    margin-top: 0;
+  }
 }
 
 .ordering {

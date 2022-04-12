@@ -13,10 +13,12 @@ import Modal from '../components/Modal';
 import Assessment from '../components/Assessment';
 
 const Map = () => {
-  const [answer, setAnswer] = useState(null);
   const [cardIndex, setCardIndex] = useState(0);
   const [shuffledPlaces] = useState(ShuffleArray(places));
   const place = shuffledPlaces[cardIndex];
+  const [answer, setAnswer] = useState(null);
+  const [rightAnswerPoints, setRightAnswerPoints] = useState(0);
+  const [wrongAnswerPoints, setWrongAnswerPoints] = useState(0);
 
   const showResult = (result) => {
     setAnswer(result);
@@ -26,15 +28,16 @@ const Map = () => {
     setAnswer(close);
     if (answer === true) {
       setCardIndex(cardIndex + 1);
+      setRightAnswerPoints(rightAnswerPoints + 1);
+    } else {
+      setWrongAnswerPoints(wrongAnswerPoints + 1);
     }
   };
 
   if (cardIndex >= places.length) {
     return (
       <Assessment
-        text={
-          'Skvělé! Jsi znalec zámořských území. Byl by z tebe skvělý mořeplavec.'
-        }
+        text={`Skvělé! Jsi znalec zámořských území. Netrefil ses ${wrongAnswerPoints}krát. Byl by z tebe skvělý mořeplavec.`}
       />
     );
   }
@@ -42,6 +45,12 @@ const Map = () => {
     <div className="map">
       <h1 className="map__heading">Přesouvání po mapě</h1>
       <p className="map__instruction">Umísti kartičku na správný kontinent.</p>
+      <section className="map__scoreboard">
+        <span className="map__rightAnswerPoints">
+          Získané body: {rightAnswerPoints}/3.
+        </span>
+        <span>Počet chyb: {wrongAnswerPoints}.</span>
+      </section>
       <section className="map__container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
