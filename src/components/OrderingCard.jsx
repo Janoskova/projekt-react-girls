@@ -2,6 +2,7 @@ import React from 'react';
 import { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import ItemTypes from '../utils/items';
+import PropTypes from 'prop-types';
 
 const OrderingCard = ({
   event,
@@ -82,6 +83,15 @@ const OrderingCard = ({
       {check ? <span className="ordering__year">{year}</span> : null}
     </div>
   );
+};
+
+OrderingCard.propTypes = {
+  event: PropTypes.string,
+  year: PropTypes.string,
+  order: PropTypes.number,
+  index: PropTypes.number,
+  moveCardHandler: PropTypes.func,
+  check: PropTypes.bool,
 };
 
 export default OrderingCard;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
+import PropTypes from 'prop-types';
 
 const PathNA = ({ result }) => {
   const [{ isOver }, drop] = useDrop(() => ({
@@ -51,6 +52,10 @@ const PathNA = ({ result }) => {
       <path d="M125.5 95.535c-.63 0-1.94.504-2.89 1.121-.96.616-1.22 1.12-.58 1.12s1.94-.504 2.89-1.12c.96-.617 1.22-1.121.58-1.121z"></path>
     </g>
   );
+};
+
+PathNA.propTypes = {
+  result: PropTypes.func,
 };
 
 export default PathNA;

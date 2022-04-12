@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Modal = ({ close, info, reply }) => {
   return (
@@ -12,6 +13,12 @@ const Modal = ({ close, info, reply }) => {
       <div className="modal__boat modal__boat--right"></div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  close: PropTypes.func,
+  info: PropTypes.string,
+  reply: PropTypes.bool,
 };
 
 export default Modal;

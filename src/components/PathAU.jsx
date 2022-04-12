@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
+import PropTypes from 'prop-types';
 
 const PathAU = ({ result }) => {
   const [{ isOver }, drop] = useDrop(() => ({
@@ -32,4 +33,7 @@ const PathAU = ({ result }) => {
   );
 };
 
+PathAU.propTypes = {
+  result: PropTypes.func,
+};
 export default PathAU;

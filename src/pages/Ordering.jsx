@@ -37,59 +37,48 @@ const Ordering = () => {
     setCheck(false);
   };
 
+  if (cardIndex >= shuffledCardSets.length) {
+    return <Assessment text={'Skvělé! Jsi znalec zámořských objevů.'} />;
+  }
   return (
-    <>
-      {items && (
-        <main className="ordering">
-          <h1 className="ordering__heading">Chronologické řazení</h1>
-          <p className="ordering__instruction">
-            Seřaďte události tak, aby nejstarší byla nahoře.
-          </p>
-          <OrderingBox>
-            {items.map((item, index) => (
-              <OrderingCard
-                key={item.order}
-                event={item.event}
-                year={item.year}
-                order={item.order}
-                index={index}
-                moveCardHandler={moveCardHandler}
-                check={check}
-              />
-            ))}
-          </OrderingBox>
-          <nav
-            className={
-              check
-                ? 'ordering__navigation--twoButtons'
-                : 'ordering__navigation'
-            }
-          >
-            <button
-              onClick={() => setCheck(true)}
-              className={
-                check ? 'ordering__button--smaller' : 'ordering__button'
-              }
-              disabled={check === true}
-            >
-              Zkontrolovat
-            </button>
-            {check ? (
-              <button
-                onClick={handleNext}
-                className="ordering__button--smaller"
-              >
-                Další
-              </button>
-            ) : null}
-          </nav>
-          <WaveIcon />
-        </main>
-      )}
-      {cardIndex >= shuffledCardSets.length && (
-        <Assessment text={'Skvělé! Jsi znalec zámořských objevů.'} />
-      )}
-    </>
+    <main className="ordering">
+      <h1 className="ordering__heading">Chronologické řazení</h1>
+      <p className="ordering__instruction">
+        Seřaďte události tak, aby nejstarší byla nahoře.
+      </p>
+      <OrderingBox>
+        {items.map((item, index) => (
+          <OrderingCard
+            key={item.order}
+            event={item.event}
+            year={item.year}
+            order={item.order}
+            index={index}
+            moveCardHandler={moveCardHandler}
+            check={check}
+          />
+        ))}
+      </OrderingBox>
+      <nav
+        className={
+          check ? 'ordering__navigation--twoButtons' : 'ordering__navigation'
+        }
+      >
+        <button
+          onClick={() => setCheck(true)}
+          className={check ? 'ordering__button--smaller' : 'ordering__button'}
+          disabled={check === true}
+        >
+          Zkontrolovat
+        </button>
+        {check ? (
+          <button onClick={handleNext} className="ordering__button--smaller">
+            Další
+          </button>
+        ) : null}
+      </nav>
+      <WaveIcon />
+    </main>
   );
 };
 

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Activity = ({ heading, path, className }) => {
   return (
@@ -11,6 +12,12 @@ const Activity = ({ heading, path, className }) => {
       </div>
     </Link>
   );
+};
+
+Activity.propTypes = {
+  heading: PropTypes.string,
+  path: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Activity;

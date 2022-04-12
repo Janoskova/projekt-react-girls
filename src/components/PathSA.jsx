@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
+import PropTypes from 'prop-types';
 
 const PathSA = ({ result }) => {
   const [{ isOver }, drop] = useDrop(() => ({
@@ -35,6 +36,10 @@ const PathSA = ({ result }) => {
       <path d="M144.99 440.74c-.17.03-.36.09-.51.18-.6.37-.77 1.17-.39 1.77.37.61 1.16.77 1.77.4.6-.37.77-1.17.39-1.77-.28-.45-.76-.65-1.26-.58z"></path>
     </g>
   );
+};
+
+PathSA.propTypes = {
+  result: PropTypes.func,
 };
 
 export default PathSA;

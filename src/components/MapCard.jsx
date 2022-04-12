@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import ItemTypes from '../utils/items';
+import PropTypes from 'prop-types';
 
 const MapCard = ({ text, answer }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
@@ -16,6 +17,11 @@ const MapCard = ({ text, answer }) => {
       {text}
     </span>
   );
+};
+
+MapCard.propTypes = {
+  text: PropTypes.string,
+  answer: PropTypes.string,
 };
 
 export default MapCard;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
+import PropTypes from 'prop-types';
 
 const PathEU = ({ result }) => {
   const [{ isOver }, drop] = useDrop(() => ({
@@ -18,6 +19,7 @@ const PathEU = ({ result }) => {
   if (isOver) {
     fill = '#262c2c';
   }
+
   return (
     <g id="EU" ref={drop} fill={fill} className="europe">
       <path
@@ -28,6 +30,10 @@ const PathEU = ({ result }) => {
       ></path>
     </g>
   );
+};
+
+PathEU.propTypes = {
+  result: PropTypes.func,
 };
 
 export default PathEU;
