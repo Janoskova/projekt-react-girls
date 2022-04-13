@@ -29,6 +29,7 @@ const Map = () => {
     if (answer === true) {
       setCardIndex(cardIndex + 1);
       setRightAnswerPoints(rightAnswerPoints + 1);
+      // sessionStorage.setItem('points', rightAnswerPoints.toString());
     } else {
       setWrongAnswerPoints(wrongAnswerPoints + 1);
     }
@@ -37,7 +38,7 @@ const Map = () => {
   if (cardIndex >= places.length) {
     return (
       <Assessment
-        text={`Skvělé! Jsi znalec zámořských území. Netrefil ses ${wrongAnswerPoints}krát. Byl by z tebe skvělý mořeplavec.`}
+        text={`Skvělé! Netrefil ses jen ${wrongAnswerPoints}krát. Jsi znalec zámořských území.`}
       />
     );
   }
@@ -47,7 +48,7 @@ const Map = () => {
       <p className="map__instruction">Umísti kartičku na správný kontinent.</p>
       <section className="map__scoreboard">
         <span className="map__rightAnswerPoints">
-          Získané body: {rightAnswerPoints}/3.
+          Získané body: {rightAnswerPoints}/4.
         </span>
         <span>Počet chyb: {wrongAnswerPoints}.</span>
       </section>
