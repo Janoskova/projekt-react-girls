@@ -1,6 +1,6 @@
 import React from 'react';
 import { places } from '../data';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ShuffleArray from '../utils/ShuffleArray';
 import MapCard from '../components/MapCard';
 import PathNA from '../components/PathNA';
@@ -17,8 +17,26 @@ const Map = () => {
   const [shuffledPlaces] = useState(ShuffleArray(places));
   const place = shuffledPlaces[cardIndex];
   const [answer, setAnswer] = useState(null);
-  const [rightAnswerPoints, setRightAnswerPoints] = useState(0);
-  const [wrongAnswerPoints, setWrongAnswerPoints] = useState(0);
+  const rightAnswerPointsAsNumber = Number(
+    sessionStorage.getItem('rightAnswerPoints'),
+  );
+  const [rightAnswerPoints, setRightAnswerPoints] = useState(
+    rightAnswerPointsAsNumber,
+  );
+  const wrongAnswerPointsAsNumber = Number(
+    sessionStorage.getItem('wrongAnswerPoints'),
+  );
+  const [wrongAnswerPoints, setWrongAnswerPoints] = useState(
+    wrongAnswerPointsAsNumber,
+  );
+
+  useEffect(() => {
+    sessionStorage.setItem('rightAnswerPoints', rightAnswerPoints.toString());
+  }, [rightAnswerPoints]);
+
+  useEffect(() => {
+    sessionStorage.setItem('wrongAnswerPoints', wrongAnswerPoints.toString());
+  }, [wrongAnswerPoints]);
 
   const showResult = (result) => {
     setAnswer(result);
@@ -29,16 +47,16 @@ const Map = () => {
     if (answer === true) {
       setCardIndex(cardIndex + 1);
       setRightAnswerPoints(rightAnswerPoints + 1);
-      // sessionStorage.setItem('points', rightAnswerPoints.toString());
     } else {
       setWrongAnswerPoints(wrongAnswerPoints + 1);
     }
   };
 
   if (cardIndex >= places.length) {
+    sessionStorage.clear();
     return (
       <Assessment
-        text={`Skvělé! Netrefil ses jen ${wrongAnswerPoints}krát. Jsi znalec zámořských území.`}
+        text={`Skvělé! Jsi v cíli. Přesunul jsi ${rightAnswerPoints} kartiček a netrefil ses při tom ${wrongAnswerPoints}krát.`}
       />
     );
   }

@@ -26,18 +26,18 @@ export const places = [
     answer: 'EU',
     info: 'Díky získaným územím v Americe španělský král Karel V. prohlašoval: „Nad mojí říší Slunce nezapadá!“',
   },
-  {
-    id: 3,
-    text: 'Ceuta',
-    answer: 'AF',
-    info: 'Maurské město Ceuta bylo první portugalskou kolonií mimo evropské území. Portugalci tak došli k poznání, jak je Afrika bohatá např. na slonovinu a zlato.',
-  },
-  {
-    id: 4,
-    text: 'Newfoundland',
-    answer: 'NA',
-    info: 'Norský Viking Leif Eriksson byl patrně prvním evropským objevitelem Ameriky. Kolem roku 1000 se vylodil na ostrově Newfoundland.',
-  },
+  // {
+  //   id: 3,
+  //   text: 'Ceuta',
+  //   answer: 'AF',
+  //   info: 'Maurské město Ceuta bylo první portugalskou kolonií mimo evropské území. Portugalci tak došli k poznání, jak je Afrika bohatá např. na slonovinu a zlato.',
+  // },
+  // {
+  //   id: 4,
+  //   text: 'Newfoundland',
+  //   answer: 'NA',
+  //   info: 'Norský Viking Leif Eriksson byl patrně prvním evropským objevitelem Ameriky. Kolem roku 1000 se vylodil na ostrově Newfoundland.',
+  // },
 ];
 
 export const events = [
