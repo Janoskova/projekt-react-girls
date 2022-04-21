@@ -11,9 +11,11 @@ import PathEU from '../components/PathEU';
 import PathSA from '../components/PathSA';
 import Modal from '../components/Modal';
 import Assessment from '../components/Assessment';
+import Scoreboard from '../components/Scoreboard';
 
 const Map = () => {
-  const [cardIndex, setCardIndex] = useState(0);
+  const cardIndexAsNumber = Number(sessionStorage.getItem('cardIndex'));
+  const [cardIndex, setCardIndex] = useState(cardIndexAsNumber);
   const [shuffledPlaces] = useState(ShuffleArray(places));
   const place = shuffledPlaces[cardIndex];
   const [answer, setAnswer] = useState(null);
@@ -31,11 +33,21 @@ const Map = () => {
   );
 
   useEffect(() => {
-    sessionStorage.setItem('rightAnswerPoints', rightAnswerPoints.toString());
+    if (cardIndex < places.length) {
+      sessionStorage.setItem('cardIndex', cardIndex.toString());
+    }
+  }, [cardIndex]);
+
+  useEffect(() => {
+    if (cardIndex < places.length) {
+      sessionStorage.setItem('rightAnswerPoints', rightAnswerPoints.toString());
+    }
   }, [rightAnswerPoints]);
 
   useEffect(() => {
-    sessionStorage.setItem('wrongAnswerPoints', wrongAnswerPoints.toString());
+    if (cardIndex < places.length) {
+      sessionStorage.setItem('wrongAnswerPoints', wrongAnswerPoints.toString());
+    }
   }, [wrongAnswerPoints]);
 
   const showResult = (result) => {
@@ -56,20 +68,18 @@ const Map = () => {
     sessionStorage.clear();
     return (
       <Assessment
-        text={`Skvělé! Jsi v cíli. Přesunul jsi ${rightAnswerPoints} kartiček a netrefil ses při tom ${wrongAnswerPoints}krát.`}
+        text={`Skvělé! Jsi v cíli. Přesunul jsi ${rightAnswerPoints} kartičky a netrefil ses při tom ${wrongAnswerPoints}krát.`}
       />
     );
   }
   return (
-    <div className="map">
+    <main className="map">
       <h1 className="map__heading">Přesouvání po mapě</h1>
       <p className="map__instruction">Umísti kartičku na správný kontinent.</p>
-      <section className="map__scoreboard">
-        <span className="map__rightAnswerPoints">
-          Získané body: {rightAnswerPoints}/4.
-        </span>
-        <span>Počet chyb: {wrongAnswerPoints}.</span>
-      </section>
+      <Scoreboard
+        rightAnswerPoints={rightAnswerPoints}
+        wrongAnswerPoints={wrongAnswerPoints}
+      />
       <section className="map__container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +100,7 @@ const Map = () => {
       {answer !== null ? (
         <Modal close={closeModal} info={place.info} reply={answer} />
       ) : null}
-    </div>
+    </main>
   );
 };
 

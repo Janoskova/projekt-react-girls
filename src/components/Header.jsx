@@ -43,6 +43,14 @@ const Header = () => {
           >
             Přesouvání po mapě
           </NavLink>
+          <NavLink
+            onClick={() => setHamburger(false)}
+            className="navigation__item"
+            activeClassName="navigation__item--active"
+            to="/dobyvani"
+          >
+            Dobývání území
+          </NavLink>
         </ul>
       </nav>
     </>

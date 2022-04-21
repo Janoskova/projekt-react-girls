@@ -167,8 +167,8 @@
   border: 2px solid #68afad;
   cursor: pointer;
 }
-.card__item--light {
-  opacity: 0.5;
+.card__item--wider {
+  border: 4px solid #68afad;
 }
 
 .ordering__card {
@@ -233,6 +233,14 @@
   background: url(../../assets/anchor.svg) no-repeat 50% 50%;
   min-height: 100px;
   margin-top: 40px;
+}
+
+.scoreboard {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+.scoreboard__rightAnswerPoints {
+  padding-right: 10px;
 }
 
 .modal {
@@ -366,13 +374,6 @@
   margin: 20px 0 20px 0;
   font-size: 1.5rem;
 }
-.map__scoreboard {
-  margin-bottom: 20px;
-  font-size: 1.3rem;
-}
-.map__rightAnswerPoints {
-  padding-right: 10px;
-}
 .map__container {
   margin: 0 auto 0 auto;
 }
@@ -458,6 +459,56 @@
   font-family: "Grenze Gotisch", cursive;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.statement {
+  text-align: center;
+  margin: 0 20px 0 20px;
+}
+.statement__instruction {
+  margin: 20px 0 20px 0;
+  font-size: 1.5rem;
+}
+.statement__map {
+  margin: 0 auto 176px auto;
+  border-radius: 15px;
+  background: url(../../assets/map-compass.jpg) no-repeat center center/cover;
+  width: 960px;
+  height: 678px;
+  position: relative;
+}
+
+.grid__container {
+  width: 960px;
+  height: 678px;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.grid__item {
+  border: 1px solid white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.358);
+  font-weight: bold;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid__item:first-child {
+  border-radius: 15px 0 0 0;
+}
+.grid__item:nth-child(5) {
+  border-radius: 0 15px 0 0;
+}
+.grid__item:nth-child(21) {
+  border-radius: 0 0 0 15px;
+}
+.grid__item:last-child {
+  border-radius: 0 0 15px 0;
 }
 
 html {

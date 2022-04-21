@@ -26,18 +26,18 @@ export const places = [
     answer: 'EU',
     info: 'Díky získaným územím v Americe španělský král Karel V. prohlašoval: „Nad mojí říší Slunce nezapadá!“',
   },
-  // {
-  //   id: 3,
-  //   text: 'Ceuta',
-  //   answer: 'AF',
-  //   info: 'Maurské město Ceuta bylo první portugalskou kolonií mimo evropské území. Portugalci tak došli k poznání, jak je Afrika bohatá např. na slonovinu a zlato.',
-  // },
-  // {
-  //   id: 4,
-  //   text: 'Newfoundland',
-  //   answer: 'NA',
-  //   info: 'Norský Viking Leif Eriksson byl patrně prvním evropským objevitelem Ameriky. Kolem roku 1000 se vylodil na ostrově Newfoundland.',
-  // },
+  {
+    id: 3,
+    text: 'Ceuta',
+    answer: 'AF',
+    info: 'Maurské město Ceuta bylo první portugalskou kolonií mimo evropské území. Portugalci tak došli k poznání, jak je Afrika bohatá např. na slonovinu a zlato.',
+  },
+  {
+    id: 4,
+    text: 'Newfoundland',
+    answer: 'NA',
+    info: 'Norský Viking Leif Eriksson byl patrně prvním evropským objevitelem Ameriky. Kolem roku 1000 se vylodil na ostrově Newfoundland.',
+  },
 ];
 
 export const events = [
@@ -107,4 +107,132 @@ export const events = [
       year: '1588',
     },
   ],
+];
+
+export const statement = [
+  {
+    id: 1,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 2,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 3,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 4,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 5,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 6,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 7,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 8,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 9,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 10,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 11,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 12,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 13,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 14,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 15,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 16,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 17,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 18,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 19,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 20,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 21,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 22,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 23,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 24,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
+  {
+    id: 25,
+    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    answer: true,
+  },
 ];

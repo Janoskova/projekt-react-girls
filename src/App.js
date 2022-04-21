@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Ordering from './pages/Ordering';
 import Map from './pages/Map';
+import Statement from './pages/Statement';
 import Footer from './components/Footer';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/presouvani">
               <Map />
+            </Route>
+            <Route path="/dobyvani">
+              <Statement />
             </Route>
           </Switch>
         </main>

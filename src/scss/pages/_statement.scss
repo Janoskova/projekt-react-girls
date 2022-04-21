@@ -1,0 +1,58 @@
+.statement {
+  text-align: center;
+  margin: 0 $spacer 0 $spacer;
+
+  &__instruction {
+    margin: $spacer 0 $spacer 0;
+    font-size: 1.5rem;
+  }
+
+  &__map {
+    margin: 0 auto 176px auto;
+    border-radius: 15px;
+    background: url(../../assets/map-compass.jpg) no-repeat center center/cover;
+    width: 960px;
+    height: 678px;
+    position: relative;
+  }
+}
+
+.grid {
+  &__container {
+    width: 960px;
+    height: 678px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  &__item {
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.358);
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item:first-child {
+    border-radius: 15px 0 0 0;
+  }
+
+  &__item:nth-child(5) {
+    border-radius: 0 15px 0 0;
+  }
+
+  &__item:nth-child(21) {
+    border-radius: 0 0 0 15px;
+  }
+
+  &__item:last-child {
+    border-radius: 0 0 15px 0;
+  }
+}

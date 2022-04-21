@@ -12,7 +12,7 @@ const MapCard = ({ text, answer }) => {
   return (
     <span
       ref={drag}
-      className={isDragging ? 'card__item card__item--light' : 'card__item'}
+      className={isDragging ? 'card__item card__item--wider' : 'card__item'}
     >
       {text}
     </span>
