@@ -42,13 +42,13 @@ const Map = () => {
     if (cardIndex < places.length) {
       sessionStorage.setItem('rightAnswerPoints', rightAnswerPoints.toString());
     }
-  }, [rightAnswerPoints]);
+  }, [rightAnswerPoints, cardIndex]);
 
   useEffect(() => {
     if (cardIndex < places.length) {
       sessionStorage.setItem('wrongAnswerPoints', wrongAnswerPoints.toString());
     }
-  }, [wrongAnswerPoints]);
+  }, [wrongAnswerPoints, cardIndex]);
 
   const showResult = (result) => {
     setAnswer(result);
