@@ -311,9 +311,9 @@
 }
 
 .grid__item {
-  border: 1px solid white;
-  color: white;
   background-color: rgba(0, 0, 0, 0.358);
+  color: white;
+  border: 1px solid white;
   font-weight: bold;
   padding: 10px;
   display: flex;
@@ -321,16 +321,36 @@
   justify-content: center;
   position: relative;
 }
-.grid__item:first-child {
+.grid__item--true {
+  background-color: rgba(104, 175, 173, 0.6980392157);
+  color: black;
+  border: 1px solid white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.grid__item--false {
+  background-color: rgba(235, 95, 85, 0.7333333333);
+  border: 1px solid white;
+  color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.grid__item:first-child, .grid__item--true:first-child, .grid__item--false:first-child {
   border-radius: 15px 0 0 0;
 }
-.grid__item:nth-child(5) {
+.grid__item:nth-child(5), .grid__item--true:nth-child(5), .grid__item--false:nth-child(5) {
   border-radius: 0 15px 0 0;
 }
-.grid__item:nth-child(21) {
+.grid__item:nth-child(21), .grid__item--true:nth-child(21), .grid__item--false:nth-child(21) {
   border-radius: 0 0 0 15px;
 }
-.grid__item:last-child {
+.grid__item:last-child, .grid__item--true:last-child, .grid__item--false:last-child {
   border-radius: 0 0 15px 0;
 }
 .grid__item:hover .grid__options {

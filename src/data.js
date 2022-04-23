@@ -117,8 +117,8 @@ export const statement = [
   },
   {
     id: 2,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Francisco Pizarro dobyl říši Aztéků.',
+    answer: false,
   },
   {
     id: 3,

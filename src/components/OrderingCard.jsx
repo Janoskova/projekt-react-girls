@@ -69,12 +69,12 @@ const OrderingCard = ({
   let cardClass;
   if (check === true) {
     if (index === order) {
-      cardClass = `ordering__card ordering__card--right`;
+      cardClass = 'ordering__card ordering__card--right';
     } else {
-      cardClass = `ordering__card ordering__card--wrong`;
+      cardClass = 'ordering__card ordering__card--wrong';
     }
   } else {
-    cardClass = `ordering__card`;
+    cardClass = 'ordering__card';
   }
 
   return (

@@ -1,8 +1,8 @@
 .grid {
   &__item {
-    border: 1px solid white;
-    color: white;
     background-color: rgba(0, 0, 0, 0.358);
+    color: white;
+    border: 1px solid white;
     font-weight: bold;
     padding: 10px;
     display: flex;
@@ -11,19 +11,49 @@
     position: relative;
   }
 
-  &__item:first-child {
+  &__item--true {
+    background-color: #68afadb2;
+    color: black;
+    border: 1px solid white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__item--false {
+    background-color: #eb5f55bb;
+    border: 1px solid white;
+    color: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__item:first-child,
+  &__item--true:first-child,
+  &__item--false:first-child {
     border-radius: 15px 0 0 0;
   }
 
-  &__item:nth-child(5) {
+  &__item:nth-child(5),
+  &__item--true:nth-child(5),
+  &__item--false:nth-child(5) {
     border-radius: 0 15px 0 0;
   }
 
-  &__item:nth-child(21) {
+  &__item:nth-child(21),
+  &__item--true:nth-child(21),
+  &__item--false:nth-child(21) {
     border-radius: 0 0 0 15px;
   }
 
-  &__item:last-child {
+  &__item:last-child,
+  &__item--true:last-child,
+  &__item--false:last-child {
     border-radius: 0 0 15px 0;
   }
 
