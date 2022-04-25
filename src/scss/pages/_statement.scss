@@ -3,9 +3,14 @@
   margin: 0 $spacer 0 $spacer;
   overflow-x: scroll;
 
-  &__instruction {
+  &__instruction,
+  &__result {
     margin: $spacer 0 $spacer 0;
     font-size: 1.5rem;
+  }
+
+  &__result {
+    font-weight: bold;
   }
 
   &__map {

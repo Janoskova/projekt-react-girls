@@ -122,27 +122,27 @@ export const statement = [
   },
   {
     id: 3,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Záměrem Portugalců bylo dostat se do Indie jižní cestou kolem Afriky.',
     answer: true,
   },
   {
     id: 4,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Kryštof Kolumbus se rozhodl plout do Indie východním směrem.',
+    answer: false,
   },
   {
     id: 5,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Výprava Magalhãese přinesla důkaz o kulatosti světa.',
     answer: true,
   },
   {
     id: 6,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Do Evropy byly z Ameriky dováženy nové plodiny (např. rýže a čaj).',
+    answer: false,
   },
   {
     id: 7,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Conquistador je synonymem slova dobyvatel.',
     answer: true,
   },
   {

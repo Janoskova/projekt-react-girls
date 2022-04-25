@@ -79,6 +79,7 @@ const Map = () => {
       <Scoreboard
         rightAnswerPoints={rightAnswerPoints}
         wrongAnswerPoints={wrongAnswerPoints}
+        total={places.length}
       />
       <section className="map__container">
         <svg

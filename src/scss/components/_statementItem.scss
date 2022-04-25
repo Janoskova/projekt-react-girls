@@ -12,25 +12,17 @@
   }
 
   &__item--true {
-    background-color: #68afadb2;
-    color: black;
+    background-color: #68afad75;
+    color: white;
     border: 1px solid white;
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
   }
 
   &__item--false {
-    background-color: #eb5f55bb;
+    background-color: #eb5f559e;
     border: 1px solid white;
-    color: black;
+    color: white;
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
   }
 
   &__item:first-child,

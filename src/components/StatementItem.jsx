@@ -2,8 +2,17 @@ import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const StatementItem = ({ text, answer }) => {
+const StatementItem = ({ text, answer, addPoint, addAnsweredStatement }) => {
   const [answerColor, setAnswerColor] = useState(null);
+
+  let gridItemText;
+  if (answerColor === true) {
+    gridItemText = 'Dobře! Rozšířil si královu řísi.';
+  } else if (answerColor === false) {
+    gridItemText = 'Škoda! Toto území jsi nedobyl.';
+  } else {
+    gridItemText = text;
+  }
 
   let gridItemClass;
   if (answerColor === true) {
@@ -15,15 +24,18 @@ const StatementItem = ({ text, answer }) => {
   }
   return (
     <div className={gridItemClass}>
-      {text}
+      {gridItemText}
       <div className="grid__options">
         <button
           className="grid__button"
           onClick={() => {
             if (answer === true) {
               setAnswerColor(true);
+              addPoint(1);
+              addAnsweredStatement(1);
             } else {
               setAnswerColor(false);
+              addAnsweredStatement(1);
             }
           }}
         >
@@ -34,8 +46,11 @@ const StatementItem = ({ text, answer }) => {
           onClick={() => {
             if (answer === false) {
               setAnswerColor(true);
+              addPoint(1);
+              addAnsweredStatement(1);
             } else {
               setAnswerColor(false);
+              addAnsweredStatement(1);
             }
           }}
         >
@@ -49,6 +64,8 @@ const StatementItem = ({ text, answer }) => {
 StatementItem.propTypes = {
   text: PropTypes.string,
   answer: PropTypes.bool,
+  addPoint: PropTypes.func,
+  addAnsweredStatement: PropTypes.func,
 };
 
 export default StatementItem;
