@@ -2,11 +2,19 @@ import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const StatementItem = ({ text, answer, addPoint, addAnsweredStatement }) => {
+const StatementItem = ({
+  text,
+  answer,
+  addPoint,
+  addAnsweredStatement,
+  gameOver,
+}) => {
   const [answerColor, setAnswerColor] = useState(null);
 
   let gridItemText;
-  if (answerColor === true) {
+  if (answerColor === true && gameOver === true) {
+    gridItemText = null;
+  } else if (answerColor === true) {
     gridItemText = 'Dobře! Rozšířil si královu řísi.';
   } else if (answerColor === false) {
     gridItemText = 'Škoda! Toto území jsi nedobyl.';
@@ -15,7 +23,9 @@ const StatementItem = ({ text, answer, addPoint, addAnsweredStatement }) => {
   }
 
   let gridItemClass;
-  if (answerColor === true) {
+  if (answerColor === true && gameOver === true) {
+    gridItemClass = 'grid__item--animated';
+  } else if (answerColor === true) {
     gridItemClass = 'grid__item--true';
   } else if (answerColor === false) {
     gridItemClass = 'grid__item--false';

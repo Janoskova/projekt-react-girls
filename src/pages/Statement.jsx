@@ -17,19 +17,25 @@ const Statement = () => {
     );
   };
 
+  let fullPoints;
+  if (totalOfAnsweredStatements === statement.length) {
+    fullPoints = true;
+  }
+
   let result;
   if (rightAnswerPoints === 25) {
     result = 'Zapíšeš se do dějin! Celý svět ti leží u nohou.';
   } else if (rightAnswerPoints >= 20) {
-    result = 'Skvělá práce. Král tě povýší do šlechtického stavu.';
+    result = 'Skvělá práce. Zapsal se do dějin. Králova odměna tě nemine.';
   } else if (rightAnswerPoints >= 15) {
-    result = 'Skvělá práce. Dobyl si více než polovinu světa.';
+    result =
+      'Skvělá práce. Dobyl si více než polovinu světa. Král tě povýší do šlechtického stavu.';
   } else if (rightAnswerPoints >= 10) {
-    result = 'Zaber. Máš na to, aby sis podmanil více území.';
+    result = 'Zaber. Máš na to, aby si králi dobyl více území.';
   } else if (rightAnswerPoints >= 5) {
     result = 'Tvoje výprava byla neúspěšná. Budeš se zodpovídat před králem.';
   } else {
-    result = 'Král tě za tvé výsledky popraví.';
+    result = 'Zkus to znova. Za tento výsledek by tě král nechal popravit.';
   }
 
   return (
@@ -39,8 +45,9 @@ const Statement = () => {
         Urči, zda se jedná o pravdivé tvrzení.
       </p>
       <p className="statement__result">
-        {statement.length === totalOfAnsweredStatements ? result : null}
+        {fullPoints ? `Počet získaných bodů: ${rightAnswerPoints}/25.` : null}
       </p>
+      <p className="statement__result">{fullPoints ? result : null}</p>
       <div className="statement__map">
         <div className="grid__container">
           {statement.map((item) => (
@@ -50,6 +57,7 @@ const Statement = () => {
               answer={item.answer}
               addPoint={countRightAnswerPoint}
               addAnsweredStatement={countTotalOfAnsweredStatements}
+              gameOver={fullPoints}
             />
           ))}
         </div>

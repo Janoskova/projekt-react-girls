@@ -11,6 +11,12 @@ export const activities = [
     path: '/presouvani',
     className: 'activity__map',
   },
+  {
+    id: 3,
+    heading: 'Dobývání území',
+    path: '/dobyvani',
+    className: 'activity__aztec',
+  },
 ];
 
 export const places = [
@@ -147,17 +153,17 @@ export const statement = [
   },
   {
     id: 8,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'S africkými domorodci dováženými do Evropy bylo zacházeno velmi ohleduplně.',
+    answer: false,
   },
   {
     id: 9,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Nový svět je v souvislosti se zámořskými objevy označením po Afriku.',
+    answer: false,
   },
   {
     id: 10,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Z Ameriky byly poprvé do Evropy přivezeny některá zvířata, např. krocan a morče.',
     answer: true,
   },
   {

@@ -77,6 +77,12 @@
 
 .activity__link {
   text-decoration: none;
+  flex-basis: 45%;
+}
+@media screen and (min-width: 1200px) {
+  .activity__link {
+    flex-basis: 33.333%;
+  }
 }
 .activity__bubble {
   width: 270px;
@@ -84,18 +90,21 @@
   border: 10px solid #68afad;
   border-radius: 100%;
   margin: 40px auto 40px auto;
+  padding: 2.5px;
+  background-clip: content-box;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .activity__bubble:hover {
   background-color: #68afad;
+  border: 2.5px dashed black;
 }
 @media screen and (min-width: 768px) {
   .activity__bubble {
     width: 300px;
     height: 300px;
-    margin: 0;
+    margin: 20px auto 20px auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -107,41 +116,31 @@
 .activity__heading {
   color: #262c2c;
 }
-.activity__hourglass {
-  background: url("../../assets/hourglass.svg") no-repeat center center/contain;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 10px auto;
-}
-@media screen and (min-width: 768px) {
-  .activity__hourglass {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .activity__hourglass {
-    width: 200px;
-    height: 200px;
-  }
-}
-.activity__map {
-  background: url("../../assets/navigation-map.svg") no-repeat center center/contain;
+.activity__hourglass, .activity__map, .activity__aztec {
   width: 100px;
   height: 100px;
   margin: auto;
 }
 @media screen and (min-width: 768px) {
-  .activity__map {
+  .activity__hourglass, .activity__map, .activity__aztec {
     width: 150px;
     height: 150px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .activity__map {
+  .activity__hourglass, .activity__map, .activity__aztec {
     width: 200px;
     height: 200px;
   }
+}
+.activity__hourglass {
+  background: url("../../assets/hourglass.svg") no-repeat center center/contain;
+}
+.activity__map {
+  background: url("../../assets/navigation-map.svg") no-repeat center center/contain;
+}
+.activity__aztec {
+  background: url("../../assets/aztec-calendar.svg") no-repeat center center/contain;
 }
 
 .northAmerica:hover,
@@ -327,22 +326,44 @@
   border: 1px solid white;
   padding: 10px;
 }
+.grid__item--animated {
+  background-color: rgba(104, 175, 173, 0.4588235294);
+  padding: 10px;
+  -webkit-animation: dots 3s linear;
+          animation: dots 3s linear;
+}
+@-webkit-keyframes dots {
+  0% {
+    border: 1px dotted white;
+  }
+  100% {
+    border: 10px dotted white;
+  }
+}
+@keyframes dots {
+  0% {
+    border: 1px dotted white;
+  }
+  100% {
+    border: 10px dotted white;
+  }
+}
 .grid__item--false {
   background-color: rgba(235, 95, 85, 0.6196078431);
   border: 1px solid white;
   color: white;
   padding: 10px;
 }
-.grid__item:first-child, .grid__item--true:first-child, .grid__item--false:first-child {
+.grid__item:first-child, .grid__item--true:first-child, .grid__item--false:first-child, .grid__item--animated:first-child {
   border-radius: 15px 0 0 0;
 }
-.grid__item:nth-child(5), .grid__item--true:nth-child(5), .grid__item--false:nth-child(5) {
+.grid__item:nth-child(5), .grid__item--true:nth-child(5), .grid__item--false:nth-child(5), .grid__item--animated:nth-child(5), .grid__item--animated:nth-child(5) {
   border-radius: 0 15px 0 0;
 }
-.grid__item:nth-child(21), .grid__item--true:nth-child(21), .grid__item--false:nth-child(21) {
+.grid__item:nth-child(21), .grid__item--true:nth-child(21), .grid__item--false:nth-child(21), .grid__item--animated:nth-child(21) {
   border-radius: 0 0 0 15px;
 }
-.grid__item:last-child, .grid__item--true:last-child, .grid__item--false:last-child {
+.grid__item:last-child, .grid__item--true:last-child, .grid__item--false:last-child, .grid__item--animated:last-child {
   border-radius: 0 0 15px 0;
 }
 .grid__item:hover .grid__options {
@@ -532,6 +553,7 @@
 }
 .statement__result {
   font-weight: bold;
+  color: #68afad;
 }
 .statement__map {
   margin: 0 auto 176px auto;

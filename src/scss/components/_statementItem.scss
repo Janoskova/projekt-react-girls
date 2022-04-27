@@ -18,6 +18,22 @@
     padding: 10px;
   }
 
+  &__item--animated {
+    background-color: #68afad75;
+    padding: 10px;
+    animation: dots 3s linear;
+  }
+
+  @keyframes dots {
+    0% {
+      border: 1px dotted white;
+    }
+
+    100% {
+      border: 10px dotted white;
+    }
+  }
+
   &__item--false {
     background-color: #eb5f559e;
     border: 1px solid white;
@@ -27,25 +43,30 @@
 
   &__item:first-child,
   &__item--true:first-child,
-  &__item--false:first-child {
+  &__item--false:first-child,
+  &__item--animated:first-child {
     border-radius: 15px 0 0 0;
   }
 
   &__item:nth-child(5),
   &__item--true:nth-child(5),
-  &__item--false:nth-child(5) {
+  &__item--false:nth-child(5),
+  &__item--animated:nth-child(5),
+  &__item--animated:nth-child(5) {
     border-radius: 0 15px 0 0;
   }
 
   &__item:nth-child(21),
   &__item--true:nth-child(21),
-  &__item--false:nth-child(21) {
+  &__item--false:nth-child(21),
+  &__item--animated:nth-child(21) {
     border-radius: 0 0 0 15px;
   }
 
   &__item:last-child,
   &__item--true:last-child,
-  &__item--false:last-child {
+  &__item--false:last-child,
+  &__item--animated:last-child {
     border-radius: 0 0 15px 0;
   }
 
