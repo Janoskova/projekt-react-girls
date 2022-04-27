@@ -28,12 +28,13 @@
     @media screen and (min-width: 768px) {
       width: 300px;
       height: 300px;
-      margin: $spacer auto $spacer auto;
+      margin: $spacer-double auto $spacer-double auto;
     }
 
     @media screen and (min-width: 1200px) {
       width: 350px;
       height: 350px;
+      margin: $spacer-double auto $spacer-double auto;
     }
   }
 
@@ -43,7 +44,8 @@
 
   &__hourglass,
   &__map,
-  &__aztec {
+  &__aztec,
+  &__arrow {
     width: 100px;
     height: 100px;
     margin: auto;
@@ -72,5 +74,9 @@
   &__aztec {
     background: url('../../assets/aztec-calendar.svg') no-repeat center
       center/contain;
+  }
+
+  &__arrow {
+    background: url('../../assets/arrow.svg') no-repeat center center/contain;
   }
 }

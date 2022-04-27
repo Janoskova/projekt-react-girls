@@ -51,6 +51,14 @@ const Header = () => {
           >
             Dobývání území
           </NavLink>
+          <NavLink
+            onClick={() => setHamburger(false)}
+            className="navigation__item"
+            activeClassName="navigation__item--active"
+            to="/strileni"
+          >
+            Střílení
+          </NavLink>
         </ul>
       </nav>
     </>

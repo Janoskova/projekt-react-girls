@@ -1,0 +1,17 @@
+.shooting {
+  text-align: center;
+  margin: 0 $spacer 0 $spacer;
+
+  &__instruction {
+    font-size: 1.5rem;
+    margin: $spacer 0 $spacer 0;
+  }
+
+  &__field {
+    margin: 0 auto 176px auto;
+    border-radius: 15px;
+    width: 898px;
+    height: 278px;
+    background: url(../../assets/ocean2.jpg) no-repeat center center/cover;
+  }
+}

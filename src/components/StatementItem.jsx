@@ -76,6 +76,7 @@ StatementItem.propTypes = {
   answer: PropTypes.bool,
   addPoint: PropTypes.func,
   addAnsweredStatement: PropTypes.func,
+  gameOver: PropTypes.bool,
 };
 
 export default StatementItem;

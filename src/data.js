@@ -17,6 +17,12 @@ export const activities = [
     path: '/dobyvani',
     className: 'activity__aztec',
   },
+  {
+    id: 4,
+    heading: 'Střílení',
+    path: '/strileni',
+    className: 'activity__arrow',
+  },
 ];
 
 export const places = [
@@ -24,7 +30,7 @@ export const places = [
     id: 1,
     text: 'mys Dobré naděje',
     answer: 'AF',
-    info: 'Mys Dobré naděje jako první Evropan obeplul v roce 1488 Bartolomeu Dias.',
+    info: 'Mys Dobré naděje jako první Evropan obeplul v roce 1488 Bartolomeo Dias.',
   },
   {
     id: 2,
@@ -43,6 +49,12 @@ export const places = [
     text: 'Newfoundland',
     answer: 'NA',
     info: 'Norský Viking Leif Eriksson byl patrně prvním evropským objevitelem Ameriky. Kolem roku 1000 se vylodil na ostrově Newfoundland.',
+  },
+  {
+    id: 5,
+    text: 'Indie',
+    answer: 'AS',
+    info: 'Před objevnými plavbami probíhaly cesty do Indie a Číny pouze po souši. Kupecké karavany byly často přepadávány.',
   },
 ];
 
@@ -168,27 +180,27 @@ export const statement = [
   },
   {
     id: 11,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Nezbytným předpokladem úspěšných plaveb byly lodě s kormidlem a plachtami.',
     answer: true,
   },
   {
     id: 12,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Kompas byl vynalezen Portugalci v důsledku zámořkých objevů .',
+    answer: false,
   },
   {
     id: 13,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Koncem 16. století se k dosavadním námořním velmocem, Španělsku a Portugalsku, přidala Anglie a Nizozemí.',
     answer: true,
   },
   {
     id: 14,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Do Ameriky byly přeneseny spalničky, chřipka a neštovice. Imunitní systém domorodců na ně byl přizpůsoben.',
+    answer: false,
   },
   {
     id: 15,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Kolumbus byl přesvědčen, že v roce 1492 doplul do Indie.',
     answer: true,
   },
   {

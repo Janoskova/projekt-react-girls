@@ -68,7 +68,7 @@ const Map = () => {
     sessionStorage.clear();
     return (
       <Assessment
-        text={`Skvělé! Jsi v cíli. Přesunul jsi ${rightAnswerPoints} kartičky a netrefil ses při tom ${wrongAnswerPoints}krát.`}
+        text={`Skvělé! Jsi v cíli. Přesunul jsi ${rightAnswerPoints} kartiček a netrefil ses při tom ${wrongAnswerPoints}krát.`}
       />
     );
   }

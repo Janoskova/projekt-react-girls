@@ -26,7 +26,7 @@ const Statement = () => {
   if (rightAnswerPoints === 25) {
     result = 'Zapíšeš se do dějin! Celý svět ti leží u nohou.';
   } else if (rightAnswerPoints >= 20) {
-    result = 'Skvělá práce. Zapsal se do dějin. Králova odměna tě nemine.';
+    result = 'Skvělá práce. Zapsal ses do dějin. Králova odměna tě nemine.';
   } else if (rightAnswerPoints >= 15) {
     result =
       'Skvělá práce. Dobyl si více než polovinu světa. Král tě povýší do šlechtického stavu.';
@@ -48,7 +48,7 @@ const Statement = () => {
         {fullPoints ? `Počet získaných bodů: ${rightAnswerPoints}/25.` : null}
       </p>
       <p className="statement__result">{fullPoints ? result : null}</p>
-      <div className="statement__map">
+      <section className="statement__map">
         <div className="grid__container">
           {statement.map((item) => (
             <StatementItem
@@ -61,7 +61,7 @@ const Statement = () => {
             />
           ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 };

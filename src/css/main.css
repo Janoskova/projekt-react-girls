@@ -104,31 +104,32 @@
   .activity__bubble {
     width: 300px;
     height: 300px;
-    margin: 20px auto 20px auto;
+    margin: 40px auto 40px auto;
   }
 }
 @media screen and (min-width: 1200px) {
   .activity__bubble {
     width: 350px;
     height: 350px;
+    margin: 40px auto 40px auto;
   }
 }
 .activity__heading {
   color: #262c2c;
 }
-.activity__hourglass, .activity__map, .activity__aztec {
+.activity__hourglass, .activity__map, .activity__aztec, .activity__arrow {
   width: 100px;
   height: 100px;
   margin: auto;
 }
 @media screen and (min-width: 768px) {
-  .activity__hourglass, .activity__map, .activity__aztec {
+  .activity__hourglass, .activity__map, .activity__aztec, .activity__arrow {
     width: 150px;
     height: 150px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .activity__hourglass, .activity__map, .activity__aztec {
+  .activity__hourglass, .activity__map, .activity__aztec, .activity__arrow {
     width: 200px;
     height: 200px;
   }
@@ -141,6 +142,9 @@
 }
 .activity__aztec {
   background: url("../../assets/aztec-calendar.svg") no-repeat center center/contain;
+}
+.activity__arrow {
+  background: url("../../assets/arrow.svg") no-repeat center center/contain;
 }
 
 .northAmerica:hover,
@@ -595,6 +599,15 @@
 }
 .grid__item:last-child {
   border-radius: 0 0 15px 0;
+}
+
+.shooting {
+  text-align: center;
+  margin: 0 20px 0 20px;
+}
+.shooting__instruction {
+  margin: 20px 0 20px 0;
+  font-size: 1.5rem;
 }
 
 html {
