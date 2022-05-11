@@ -1,0 +1,34 @@
+.treasure {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 176px;
+  background: url(../../assets/treasure-water.jpg) no-repeat bottom center/cover;
+  color: white;
+  font-weight: bold;
+
+  @media screen and (min-width: 1200px) {
+    background: url(../../assets/treasure-water-bigger.jpg) no-repeat bottom
+      center/cover;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    padding-right: $spacer-double;
+    padding-left: $spacer-double;
+    padding-top: $spacer-double;
+    margin: 0;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      padding-right: 60px;
+      padding-left: 60px;
+      font-size: 2rem;
+      text-align: left;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 3rem;
+    }
+  }
+}

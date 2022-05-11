@@ -1,71 +1,99 @@
 import React from 'react';
-
-const categories = [{ category: 'Plodiny a zvířata dovezené z Ameriky' }];
-
-const targets = [
-  [
-    {
-      word: 'morče',
-      answer: true,
-      id: 1,
-    },
-    {
-      word: 'brambory',
-      answer: true,
-      id: 2,
-    },
-    {
-      word: 'rýže',
-      answer: false,
-      id: 3,
-    },
-    {
-      word: 'krocan',
-      answer: true,
-      id: 4,
-    },
-    {
-      word: 'čaj',
-      answer: false,
-      id: 5,
-    },
-    {
-      word: 'kukuřice',
-      answer: true,
-      id: 6,
-    },
-    {
-      word: 'kůň',
-      answer: false,
-      id: 7,
-    },
-    {
-      word: 'brambory',
-      answer: true,
-      id: 8,
-    },
-  ],
-];
+import { useState } from 'react';
+import { targets } from '../data';
+import AssessmentTreasure from '../components/AssessmentTreasure';
+import Target from '../components/Target';
+import ShuffleArray from '../utils/ShuffleArray';
 
 const Shooting = () => {
-  const items = targets[0];
+  const [sailingAnimation, setSailingAnimation] = useState(false);
+  const [coinAnimation, setCoinAnimation] = useState(false);
+  const [points, setPoints] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [shuffledTargets] = useState(ShuffleArray(targets));
+  const items = shuffledTargets[index];
+
+  const countRightAnswerPoint = (addPoint) => {
+    setPoints(points + addPoint);
+  };
+
+  const triggerCoinAnimation = (coin) => {
+    setCoinAnimation(coin);
+  };
+
+  const nextGame = () => {
+    setSailingAnimation(false);
+    setIndex(index + 1);
+  };
+
+  const triggerAnimation = () => {
+    setSailingAnimation(!sailingAnimation);
+    setTimeout(nextGame, 17000);
+  };
+
+  if (index >= shuffledTargets.length) {
+    return <AssessmentTreasure points={points} />;
+  }
   return (
     <main className="shooting">
       <h1>Střílení</h1>
-      <p className="shooting__instruction">
-        Sestřeluj pouze slova, která patří do dané kategorie a sbírej zlaťáky.
-      </p>
-      <p className="shooting__instruction">
-        Kategorie:{' '}
-        <span className="shooting__category">{categories[0].category}</span>
-      </p>
-      <button className="shooting__play">Začít hrát</button>
+      <section className="shooting__introduction">
+        <div className="shooting__score">
+          <div
+            className={coinAnimation ? 'shooting__coin' : ''}
+            onAnimationEnd={() => setCoinAnimation(false)}
+          ></div>
+          <div className="shooting__treasure">
+            <div className="shooting__points">{points}</div>
+          </div>
+        </div>
+        <div className="shooting__text">
+          <p className="shooting__instruction">
+            Sestřeluj pouze slova, která patří do určité kategorie a sbírej
+            zlaťáky.
+          </p>
+          <p className="shooting__instruction">
+            Kategorie:{' '}
+            <span className="shooting__category">{items[index].category}</span>
+          </p>
+          {index === 0 ? (
+            <button
+              className={
+                sailingAnimation === true
+                  ? 'shooting__play shooting__play--disabled'
+                  : 'shooting__play'
+              }
+              onClick={triggerAnimation}
+              disabled={sailingAnimation === true}
+            >
+              Začít hrát
+            </button>
+          ) : (
+            <button
+              className={
+                sailingAnimation === true
+                  ? 'shooting__play shooting__play--disabled'
+                  : 'shooting__play'
+              }
+              onClick={triggerAnimation}
+              disabled={sailingAnimation === true}
+            >
+              Pokračovat ve hře
+            </button>
+          )}
+        </div>
+      </section>
       <section className="shooting__field">
         {items.map((item) => (
-          <div className="shooting__target">
-            <span className="shooting__word">{item.word}</span>
-            <div className="shooting__caravel"></div>
-          </div>
+          <Target
+            key={item.word}
+            animationDelay={item.animationDelay}
+            sailingAnimation={sailingAnimation}
+            word={item.word}
+            answer={item.answer}
+            addPoint={countRightAnswerPoint}
+            coin={triggerCoinAnimation}
+          />
         ))}
       </section>
     </main>

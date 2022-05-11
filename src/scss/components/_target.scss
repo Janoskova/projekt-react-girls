@@ -1,0 +1,41 @@
+.target {
+  text-align: left;
+  cursor: crosshair;
+  clear: both;
+  width: fit-content;
+  margin-left: -150px;
+
+  &--disabled {
+    pointer-events: none;
+  }
+
+  &__word {
+    color: white;
+    font-size: 20px;
+  }
+
+  &__word::after {
+    content: '';
+    display: inline-block;
+    background-color: white;
+    height: 1px;
+    width: 10px;
+    margin-bottom: 0;
+  }
+
+  &__caravel {
+    background: url(../../assets/caravel.svg) no-repeat center center/cover;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+  }
+
+  @keyframes sail {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translate(1048px);
+    }
+  }
+}

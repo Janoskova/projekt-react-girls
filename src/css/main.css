@@ -196,6 +196,89 @@
   font-weight: bold;
 }
 
+.treasure {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 176px;
+  background: url(../../assets/treasure-water.jpg) no-repeat bottom center/cover;
+  color: white;
+  font-weight: bold;
+}
+@media screen and (min-width: 1200px) {
+  .treasure {
+    background: url(../../assets/treasure-water-bigger.jpg) no-repeat bottom center/cover;
+  }
+}
+.treasure__text {
+  font-size: 1.5rem;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 40px;
+  margin: 0;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .treasure__text {
+    padding-right: 60px;
+    padding-left: 60px;
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .treasure__text {
+    font-size: 3rem;
+  }
+}
+
+.target {
+  text-align: left;
+  cursor: crosshair;
+  clear: both;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: -150px;
+}
+.target--disabled {
+  pointer-events: none;
+}
+.target__word {
+  color: white;
+  font-size: 20px;
+}
+.target__word::after {
+  content: "";
+  display: inline-block;
+  background-color: white;
+  height: 1px;
+  width: 10px;
+  margin-bottom: 0;
+}
+.target__caravel {
+  background: url(../../assets/caravel.svg) no-repeat center center/cover;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+}
+@-webkit-keyframes sail {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translate(1048px);
+  }
+}
+@keyframes sail {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translate(1048px);
+  }
+}
+
 .assessment {
   position: relative;
   height: 600px;
@@ -605,33 +688,94 @@
   text-align: center;
   margin: 0 20px 0 20px;
 }
+.shooting__introduction {
+  width: 898px;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+.shooting__score {
+  position: relative;
+}
+.shooting__treasure {
+  background: url(../../assets/treasure.svg) no-repeat center center/cover;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  margin-left: 40px;
+  position: relative;
+}
+.shooting__coin {
+  background: url(../../assets/coin.svg) no-repeat center center/cover;
+  width: 20px;
+  height: 20px;
+  top: -20px;
+  margin-left: 45px;
+  position: absolute;
+  z-index: 1;
+  -webkit-animation: fall 0.5s linear both;
+          animation: fall 0.5s linear both;
+}
+@-webkit-keyframes fall {
+  0% {
+    transform: translate(0px) scale(1);
+  }
+  70% {
+    transform: translateY(50px) scale(1);
+  }
+  100% {
+    transform: translateY(60px) scale(0);
+  }
+}
+@keyframes fall {
+  0% {
+    transform: translate(0px) scale(1);
+  }
+  70% {
+    transform: translateY(50px) scale(1);
+  }
+  100% {
+    transform: translateY(60px) scale(0);
+  }
+}
+.shooting__points {
+  background-color: #ecc958;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  transform: skew(12deg) rotate(10deg);
+  border-radius: 5px;
+}
 .shooting__instruction {
   font-size: 1.5rem;
-  margin: 20px 0 20px 0;
+  line-height: 0.5;
+}
+.shooting__category {
+  color: #68afad;
+  font-weight: bold;
+}
+.shooting__play {
+  color: #68afad;
+  background-color: #262c2c;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  border: 2px solid #68afad;
+  cursor: pointer;
+}
+.shooting__play--disabled {
+  background-color: lightgrey;
+  cursor: auto;
 }
 .shooting__field {
-  margin: 0 auto 176px auto;
+  margin: 20px auto 176px auto;
   padding: 5px 0 5px 0;
   border-radius: 15px;
   width: 898px;
-  height: 678px;
-  background: url(../../assets/ocean2.jpg) no-repeat center center/cover;
-}
-.shooting__target {
-  margin: 5px 0 5px 0;
-}
-.shooting__word {
-  color: white;
-  font-size: 20px;
-  display: inline-block;
-  padding-top: 75px;
-  cursor: pointer;
-}
-.shooting__caravel {
-  background: url(../../assets/caravel.svg) no-repeat center center/cover;
-  height: 80px;
-  width: 80px;
-  cursor: pointer;
+  height: 400px;
+  background: url(../../assets/ocean.jpg) no-repeat center center/cover;
+  position: relative;
 }
 
 html {
