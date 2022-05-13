@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 const Target = ({
   addPoint,
   coin,
+  lighthouses,
+  settingLighthouses,
   sailingAnimation,
   animationDelay,
   answer,
@@ -18,7 +20,9 @@ const Target = ({
       coin(true);
       setTargetDisabled(true);
     } else {
-      console.log('wrong answer');
+      setTargetDisabled(true);
+      const newLighthouses = lighthouses.slice(1);
+      return settingLighthouses(newLighthouses);
     }
   };
 
@@ -39,8 +43,10 @@ const Target = ({
 };
 
 Target.propTypes = {
-  check: PropTypes.func,
+  addPoint: PropTypes.func,
   coin: PropTypes.func,
+  lighthouses: PropTypes.array,
+  settingLighthouses: PropTypes.func,
   sailingAnimation: PropTypes.bool,
   animationDelay: PropTypes.string,
   answer: PropTypes.bool,

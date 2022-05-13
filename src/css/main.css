@@ -232,6 +232,12 @@
   }
 }
 
+.lighthouse {
+  width: 40px;
+  height: 100px;
+  background: url(../../assets/lighthouse.svg) no-repeat center center/contain;
+}
+
 .target {
   text-align: left;
   cursor: crosshair;
@@ -687,23 +693,47 @@
 .shooting {
   text-align: center;
   margin: 0 20px 0 20px;
+  overflow-x: scroll;
 }
 .shooting__introduction {
   width: 898px;
   margin: auto;
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.shooting__heading {
+  flex-basis: 100%;
+  order: 1;
+}
+@media screen and (min-width: 1200px) {
+  .shooting__heading {
+    order: 0;
+  }
 }
 .shooting__score {
   position: relative;
+  order: 3;
+  flex-basis: 50%;
+}
+@media screen and (min-width: 1200px) {
+  .shooting__score {
+    flex-basis: 15%;
+    order: 0;
+  }
 }
 .shooting__treasure {
   background: url(../../assets/treasure.svg) no-repeat center center/cover;
   width: 100px;
   height: 100px;
-  margin-right: 20px;
-  margin-left: 40px;
   position: relative;
+  margin: 20px 20px 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  .shooting__treasure {
+    margin: auto 0 0 0;
+  }
 }
 .shooting__coin {
   background: url(../../assets/coin.svg) no-repeat center center/cover;
@@ -748,13 +778,37 @@
   transform: skew(12deg) rotate(10deg);
   border-radius: 5px;
 }
+.shooting__text {
+  order: 2;
+}
+@media screen and (min-width: 1200px) {
+  .shooting__text {
+    flex-basis: 70%;
+    order: 0;
+  }
+}
 .shooting__instruction {
   font-size: 1.5rem;
-  line-height: 0.5;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .shooting__category {
   color: #68afad;
   font-weight: bold;
+}
+.shooting__lighthouses {
+  display: flex;
+  order: 4;
+  flex-basis: 50%;
+  margin-right: auto;
+  margin-top: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .shooting__lighthouses {
+    margin-top: 0;
+    flex-basis: 15%;
+    order: 0;
+  }
 }
 .shooting__play {
   color: #68afad;
@@ -763,19 +817,32 @@
   border-radius: 15px;
   border: 2px solid #68afad;
   cursor: pointer;
+  margin: 20px auto 20px auto;
+  order: 5;
+}
+@media screen and (min-width: 1200px) {
+  .shooting__play {
+    order: 0;
+  }
 }
 .shooting__play--disabled {
   background-color: lightgrey;
   cursor: auto;
 }
-.shooting__field {
-  margin: 20px auto 176px auto;
+.shooting__field, .shooting__field--gameover {
+  margin: 0 auto 176px auto;
   padding: 5px 0 5px 0;
   border-radius: 15px;
   width: 898px;
   height: 400px;
+}
+.shooting__field {
   background: url(../../assets/ocean.jpg) no-repeat center center/cover;
   position: relative;
+}
+.shooting__field--gameover {
+  background: url(../../assets/lighthouse-gameover.jpg) no-repeat center center/contain;
+  color: #68afad;
 }
 
 html {

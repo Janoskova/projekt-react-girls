@@ -373,3 +373,15 @@ export const targets = [
     },
   ],
 ];
+
+export const lighthousesArray = [
+  {
+    id: 1,
+  },
+  {
+    id: 2,
+  },
+  {
+    id: 3,
+  },
+];

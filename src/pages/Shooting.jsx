@@ -1,17 +1,23 @@
 import React from 'react';
 import { useState } from 'react';
-import { targets } from '../data';
+import { targets, lighthousesArray } from '../data';
 import AssessmentTreasure from '../components/AssessmentTreasure';
+import Lighthouse from '../components/Lighthouse';
 import Target from '../components/Target';
 import ShuffleArray from '../utils/ShuffleArray';
 
 const Shooting = () => {
   const [sailingAnimation, setSailingAnimation] = useState(false);
   const [coinAnimation, setCoinAnimation] = useState(false);
+  const [lighthouses, setLighthouses] = useState(lighthousesArray);
   const [points, setPoints] = useState(0);
   const [index, setIndex] = useState(0);
   const [shuffledTargets] = useState(ShuffleArray(targets));
   const items = shuffledTargets[index];
+
+  const deleteLighthouse = (newLighthouses) => {
+    return setLighthouses(newLighthouses);
+  };
 
   const countRightAnswerPoint = (addPoint) => {
     setPoints(points + addPoint);
@@ -31,71 +37,80 @@ const Shooting = () => {
     setTimeout(nextGame, 17000);
   };
 
+  let button;
+  if (lighthouses.length === 0) {
+    button = <button className="shooting__play">Nová hra</button>;
+  } else {
+    button = (
+      <button
+        className={
+          sailingAnimation === true
+            ? 'shooting__play shooting__play--disabled'
+            : 'shooting__play'
+        }
+        onClick={triggerAnimation}
+        disabled={sailingAnimation === true}
+      >
+        {index === 0 ? 'Začít hrát' : 'Pokračovat ve hře'}
+      </button>
+    );
+  }
+
   if (index >= shuffledTargets.length) {
     return <AssessmentTreasure points={points} />;
   }
   return (
     <main className="shooting">
-      <h1>Střílení</h1>
       <section className="shooting__introduction">
+        <h1 className="shooting__heading">Střílení</h1>
         <div className="shooting__score">
-          <div
-            className={coinAnimation ? 'shooting__coin' : ''}
-            onAnimationEnd={() => setCoinAnimation(false)}
-          ></div>
           <div className="shooting__treasure">
+            <div
+              className={coinAnimation ? 'shooting__coin' : ''}
+              onAnimationEnd={() => setCoinAnimation(false)}
+            ></div>
             <div className="shooting__points">{points}</div>
           </div>
         </div>
         <div className="shooting__text">
           <p className="shooting__instruction">
             Sestřeluj pouze slova, která patří do určité kategorie a sbírej
-            zlaťáky.
+            zlaťáky. Za chybně sestřelené slovo, přijdeš o maják střežící tvůj
+            život.
           </p>
           <p className="shooting__instruction">
             Kategorie:{' '}
             <span className="shooting__category">{items[index].category}</span>
           </p>
-          {index === 0 ? (
-            <button
-              className={
-                sailingAnimation === true
-                  ? 'shooting__play shooting__play--disabled'
-                  : 'shooting__play'
-              }
-              onClick={triggerAnimation}
-              disabled={sailingAnimation === true}
-            >
-              Začít hrát
-            </button>
-          ) : (
-            <button
-              className={
-                sailingAnimation === true
-                  ? 'shooting__play shooting__play--disabled'
-                  : 'shooting__play'
-              }
-              onClick={triggerAnimation}
-              disabled={sailingAnimation === true}
-            >
-              Pokračovat ve hře
-            </button>
-          )}
         </div>
+        <div className="shooting__lighthouses">
+          {lighthouses.map((item) => (
+            <Lighthouse key={item.id} />
+          ))}
+        </div>
+        {button}
       </section>
-      <section className="shooting__field">
-        {items.map((item) => (
-          <Target
-            key={item.word}
-            animationDelay={item.animationDelay}
-            sailingAnimation={sailingAnimation}
-            word={item.word}
-            answer={item.answer}
-            addPoint={countRightAnswerPoint}
-            coin={triggerCoinAnimation}
-          />
-        ))}
-      </section>
+      {lighthouses.length === 0 ? (
+        <section className="shooting__field--gameover">
+          <h2 className="shooting__gameover">Zkus to znova!</h2>
+        </section>
+      ) : (
+        <section className="shooting__field">
+          {items.map((item) => (
+            <Target
+              key={item.word}
+              animationDelay={item.animationDelay}
+              sailingAnimation={sailingAnimation}
+              word={item.word}
+              answer={item.answer}
+              addPoint={countRightAnswerPoint}
+              coin={triggerCoinAnimation}
+              lighthouses={lighthouses}
+              settingLighthouses={deleteLighthouse}
+            />
+          ))}
+        </section>
+      )}
     </main>
   );
 };

@@ -1,25 +1,44 @@
 .shooting {
   text-align: center;
   margin: 0 $spacer 0 $spacer;
+  overflow-x: scroll;
 
   &__introduction {
     width: 898px;
     margin: auto;
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  &__heading {
+    flex-basis: 100%;
+    order: 1;
+    @media screen and (min-width: 1200px) {
+      order: 0;
+    }
   }
 
   &__score {
     position: relative;
+    order: 3;
+    flex-basis: 50%;
+    @media screen and (min-width: 1200px) {
+      flex-basis: 15%;
+      order: 0;
+    }
   }
 
   &__treasure {
     background: url(../../assets/treasure.svg) no-repeat center center/cover;
     width: 100px;
     height: 100px;
-    margin-right: $spacer;
-    margin-left: $spacer-double;
     position: relative;
+    margin: $spacer $spacer 0 auto;
+    @media screen and (min-width: 1200px) {
+      margin: auto 0 0 0;
+    }
   }
 
   &__coin {
@@ -56,14 +75,36 @@
     border-radius: 5px;
   }
 
+  &__text {
+    order: 2;
+    @media screen and (min-width: 1200px) {
+      flex-basis: 70%;
+      order: 0;
+    }
+  }
+
   &__instruction {
     font-size: 1.5rem;
-    line-height: 0.5;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   &__category {
     color: $color-primary;
     font-weight: bold;
+  }
+
+  &__lighthouses {
+    display: flex;
+    order: 4;
+    flex-basis: 50%;
+    margin-right: auto;
+    margin-top: $spacer;
+    @media screen and (min-width: 1200px) {
+      margin-top: 0;
+      flex-basis: 15%;
+      order: 0;
+    }
   }
 
   &__play {
@@ -73,6 +114,11 @@
     border-radius: 15px;
     border: 2px solid $color-primary;
     cursor: pointer;
+    margin: $spacer auto $spacer auto;
+    order: 5;
+    @media screen and (min-width: 1200px) {
+      order: 0;
+    }
   }
 
   &__play--disabled {
@@ -80,13 +126,23 @@
     cursor: auto;
   }
 
-  &__field {
-    margin: $spacer auto 176px auto;
+  &__field,
+  &__field--gameover {
+    margin: 0 auto 176px auto;
     padding: 5px 0 5px 0;
     border-radius: 15px;
     width: 898px;
     height: 400px;
+  }
+
+  &__field {
     background: url(../../assets/ocean.jpg) no-repeat center center/cover;
     position: relative;
+  }
+
+  &__field--gameover {
+    background: url(../../assets/lighthouse-gameover.jpg) no-repeat center
+      center/contain;
+    color: $color-primary;
   }
 }
