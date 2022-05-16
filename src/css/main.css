@@ -285,6 +285,26 @@
   }
 }
 
+.play {
+  color: #68afad;
+  background-color: #262c2c;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  border: 2px solid #68afad;
+  cursor: pointer;
+  margin: 20px auto 20px auto;
+  order: 5;
+}
+@media screen and (min-width: 1200px) {
+  .play {
+    order: 0;
+  }
+}
+.play--disabled {
+  background-color: lightgrey;
+  cursor: auto;
+}
+
 .assessment {
   position: relative;
   height: 600px;
@@ -517,6 +537,30 @@
   }
 }
 
+.welcome {
+  text-align: center;
+  margin: 0 auto 0 auto;
+  padding: 0 20px 0 20px;
+  max-width: 400px;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  .welcome {
+    max-width: 600px;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .welcome {
+    max-width: 800px;
+    font-size: 1.5rem;
+  }
+}
+.welcome__text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .activities {
   text-align: center;
   margin-bottom: 192px;
@@ -530,6 +574,7 @@
   }
 }
 .activities__heading {
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
@@ -769,7 +814,7 @@
   }
 }
 .shooting__points {
-  background-color: #ecc958;
+  background-color: #68afad;
   width: 28px;
   height: 28px;
   position: absolute;
@@ -810,25 +855,6 @@
     order: 0;
   }
 }
-.shooting__play {
-  color: #68afad;
-  background-color: #262c2c;
-  padding: 5px 10px 5px 10px;
-  border-radius: 15px;
-  border: 2px solid #68afad;
-  cursor: pointer;
-  margin: 20px auto 20px auto;
-  order: 5;
-}
-@media screen and (min-width: 1200px) {
-  .shooting__play {
-    order: 0;
-  }
-}
-.shooting__play--disabled {
-  background-color: lightgrey;
-  cursor: auto;
-}
 .shooting__field, .shooting__field--gameover {
   margin: 0 auto 176px auto;
   padding: 5px 0 5px 0;
@@ -841,8 +867,11 @@
   position: relative;
 }
 .shooting__field--gameover {
-  background: url(../../assets/lighthouse-gameover.jpg) no-repeat center center/contain;
+  background: url(../../assets/treasure-gameover.jpg) no-repeat center bottom/cover;
   color: #68afad;
+}
+.shooting__gameover {
+  margin-top: 20px;
 }
 
 html {

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Target = ({
+const ShootingTarget = ({
   addPoint,
   coin,
   lighthouses,
@@ -42,7 +42,7 @@ const Target = ({
   );
 };
 
-Target.propTypes = {
+ShootingTarget.propTypes = {
   addPoint: PropTypes.func,
   coin: PropTypes.func,
   lighthouses: PropTypes.array,
@@ -53,4 +53,4 @@ Target.propTypes = {
   word: PropTypes.string,
 };
 
-export default Target;
+export default ShootingTarget;

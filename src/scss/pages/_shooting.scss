@@ -65,7 +65,7 @@
   }
 
   &__points {
-    background-color: #ecc958;
+    background-color: $color-primary;
     width: 28px;
     height: 28px;
     position: absolute;
@@ -107,25 +107,6 @@
     }
   }
 
-  &__play {
-    color: $color-primary;
-    background-color: $color-font;
-    padding: 5px 10px 5px 10px;
-    border-radius: 15px;
-    border: 2px solid $color-primary;
-    cursor: pointer;
-    margin: $spacer auto $spacer auto;
-    order: 5;
-    @media screen and (min-width: 1200px) {
-      order: 0;
-    }
-  }
-
-  &__play--disabled {
-    background-color: lightgrey;
-    cursor: auto;
-  }
-
   &__field,
   &__field--gameover {
     margin: 0 auto 176px auto;
@@ -141,8 +122,12 @@
   }
 
   &__field--gameover {
-    background: url(../../assets/lighthouse-gameover.jpg) no-repeat center
-      center/contain;
+    background: url(../../assets/treasure-gameover.jpg) no-repeat center bottom /
+      cover;
     color: $color-primary;
+  }
+
+  &__gameover {
+    margin-top: $spacer;
   }
 }

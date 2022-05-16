@@ -1,0 +1,18 @@
+.play {
+  color: $color-primary;
+  background-color: $color-font;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  border: 2px solid $color-primary;
+  cursor: pointer;
+  margin: $spacer auto $spacer auto;
+  order: 5;
+  @media screen and (min-width: 1200px) {
+    order: 0;
+  }
+
+  &--disabled {
+    background-color: lightgrey;
+    cursor: auto;
+  }
+}

@@ -125,6 +125,28 @@ export const events = [
       year: '1588',
     },
   ],
+  [
+    {
+      event: 'Začátek reformace.',
+      order: 1,
+      year: '1517',
+    },
+    {
+      event: 'Dobytí Konstantinopole Turky.',
+      order: 0,
+      year: '1453',
+    },
+    {
+      event: 'Vznik USA. 4. července',
+      order: 3,
+      year: '1776',
+    },
+    {
+      event: 'Založení první Britské kolonie – Virginie.',
+      order: 2,
+      year: '1606',
+    },
+  ],
 ];
 
 export const statement = [
@@ -165,7 +187,7 @@ export const statement = [
   },
   {
     id: 8,
-    text: 'S africkými domorodci dováženými do Evropy bylo zacházeno velmi ohleduplně.',
+    text: 'S africkými domorodci dováženými do Ameriky bylo zacházeno velmi ohleduplně.',
     answer: false,
   },
   {
@@ -205,53 +227,53 @@ export const statement = [
   },
   {
     id: 16,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Španělé získali v Americe obrovské bohatství. ',
     answer: true,
   },
   {
     id: 17,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Ve středověku si vzdělaní lidé stále mysleli, že země je placatá. ',
+    answer: false,
   },
   {
     id: 18,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Kryštof Kolumbus měl tři lodě: Niňu, Pintu a Pinďu.',
+    answer: false,
   },
   {
     id: 19,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'První ostrov, který Evropané v Karibiku objevili, pojmenovali San Salvador.',
     answer: true,
   },
   {
     id: 20,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Indiáni před příchodem Evropanů lovili bizony na koních.',
+    answer: false,
   },
   {
     id: 21,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Aztékové konali podle odhadů kolem 6 000 lidských obětí ročně.',
     answer: true,
   },
   {
     id: 22,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Cesta do Ameriky trvala Kolumbovi přibližně 3 měsíce.',
     answer: true,
   },
   {
     id: 23,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Inkové a Aztékové používali primitivní železné nástroje.',
+    answer: false,
   },
   {
     id: 24,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
+    text: 'Původní obyvatelé Ameriky neznali kolo.',
     answer: true,
   },
   {
     id: 25,
-    text: 'Kontinent Amerika byl pojmenován po cestovateli Amerigo Vespucci, který popsal východní pobřeží.',
-    answer: true,
+    text: 'Evropští dobyvatelé měli velkou početní převahu.',
+    answer: false,
   },
 ];
 
@@ -370,6 +392,64 @@ export const targets = [
       id: 8,
       animationDelay: '3s',
       category: 'Předpoklady zámořských plaveb',
+    },
+  ],
+  [
+    {
+      word: 'prase',
+      answer: true,
+      id: 1,
+      animationDelay: '0s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
+    },
+    {
+      word: 'kůň',
+      answer: true,
+      id: 2,
+      animationDelay: '5s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
+    },
+    {
+      word: 'kakao',
+      answer: false,
+      id: 3,
+      animationDelay: '6s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
+    },
+    {
+      word: 'dýně',
+      answer: false,
+      id: 4,
+      animationDelay: '3s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
+    },
+    {
+      word: 'včely',
+      answer: true,
+      id: 5,
+      animationDelay: '7s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
+    },
+    {
+      word: 'banány',
+      answer: true,
+      id: 6,
+      animationDelay: '0.5s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
+    },
+    {
+      word: 'paprika',
+      answer: false,
+      id: 7,
+      animationDelay: '3s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
+    },
+    {
+      word: 'karibu',
+      answer: false,
+      id: 8,
+      animationDelay: '4s',
+      category: 'Plodiny a zvířata dovezené do Ameriky',
     },
   ],
 ];

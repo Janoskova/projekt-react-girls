@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import { targets, lighthousesArray } from '../data';
+import ShuffleArray from '../utils/ShuffleArray';
 import AssessmentTreasure from '../components/AssessmentTreasure';
 import Lighthouse from '../components/Lighthouse';
-import Target from '../components/Target';
-import ShuffleArray from '../utils/ShuffleArray';
+import ShootingTarget from '../components/ShootingTarget';
+import ShootingButton from '../components/ShootingButton';
 
 const Shooting = () => {
   const [sailingAnimation, setSailingAnimation] = useState(false);
@@ -37,24 +38,11 @@ const Shooting = () => {
     setTimeout(nextGame, 17000);
   };
 
-  let button;
-  if (lighthouses.length === 0) {
-    button = <button className="shooting__play">Nová hra</button>;
-  } else {
-    button = (
-      <button
-        className={
-          sailingAnimation === true
-            ? 'shooting__play shooting__play--disabled'
-            : 'shooting__play'
-        }
-        onClick={triggerAnimation}
-        disabled={sailingAnimation === true}
-      >
-        {index === 0 ? 'Začít hrát' : 'Pokračovat ve hře'}
-      </button>
-    );
-  }
+  const newGame = () => {
+    setIndex(0);
+    setPoints(0);
+    setLighthouses(lighthousesArray);
+  };
 
   if (index >= shuffledTargets.length) {
     return <AssessmentTreasure points={points} />;
@@ -88,16 +76,24 @@ const Shooting = () => {
             <Lighthouse key={item.id} />
           ))}
         </div>
-        {button}
+        <ShootingButton
+          sailingAnimation={sailingAnimation}
+          lighthouses={lighthouses}
+          index={index}
+          triggerAnimation={triggerAnimation}
+          newGame={newGame}
+        />
       </section>
       {lighthouses.length === 0 ? (
         <section className="shooting__field--gameover">
-          <h2 className="shooting__gameover">Zkus to znova!</h2>
+          <h2 className="shooting__gameover">
+            Tentokrát to nevyšlo. Zkus to znova!
+          </h2>
         </section>
       ) : (
         <section className="shooting__field">
           {items.map((item) => (
-            <Target
+            <ShootingTarget
               key={item.word}
               animationDelay={item.animationDelay}
               sailingAnimation={sailingAnimation}
