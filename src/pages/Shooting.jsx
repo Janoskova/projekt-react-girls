@@ -33,10 +33,15 @@ const Shooting = () => {
     setIndex(index + 1);
   };
 
+  let timer;
   const triggerAnimation = () => {
-    setSailingAnimation(!sailingAnimation);
-    setTimeout(nextGame, 17000);
+    setSailingAnimation(true);
+    timer = setTimeout(nextGame, 17000);
   };
+
+  if (lighthouses.length === 0) {
+    clearTimeout(timer);
+  }
 
   const newGame = () => {
     setIndex(0);

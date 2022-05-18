@@ -11,27 +11,53 @@ const StatementItem = ({
 }) => {
   const [answerColor, setAnswerColor] = useState(null);
 
-  let gridItemText;
-  if (answerColor === true && gameOver === true) {
-    gridItemText = null;
-  } else if (answerColor === true) {
-    gridItemText = 'Dobře! Rozšířil si královu řísi.';
-  } else if (answerColor === false) {
-    gridItemText = 'Škoda! Toto území jsi nedobyl.';
-  } else {
-    gridItemText = text;
-  }
+  const showGridItemText = () => {
+    if (answerColor === true && gameOver === true) return null;
+    if (answerColor === true) return 'Dobře! Rozšířil si královu řísi.';
+    if (answerColor === false) return 'Škoda! Toto území jsi nedobyl.';
+    return text;
+  };
+  const gridItemText = showGridItemText();
 
-  let gridItemClass;
-  if (answerColor === true && gameOver === true) {
-    gridItemClass = 'grid__item--animated';
-  } else if (answerColor === true) {
-    gridItemClass = 'grid__item--true';
-  } else if (answerColor === false) {
-    gridItemClass = 'grid__item--false';
-  } else {
-    gridItemClass = 'grid__item';
-  }
+  const provideGridItemClass = () => {
+    if (answerColor === true && gameOver === true)
+      return 'grid__item--animated';
+    if (answerColor === true) return 'grid__item--true';
+    if (answerColor === false) return 'grid__item--false';
+    return 'grid__item';
+  };
+  const gridItemClass = provideGridItemClass();
+
+  // let gridItemText;
+  // let gridItemClass;
+  // const changeGridItem = () => {
+  //   if (answerColor === true && gameOver === true)
+  //     return (gridItemText = null), (gridItemClass = 'grid__item--animated');
+  //   if (answerColor === true)
+  //     return (
+  //       (gridItemText = 'Dobře! Rozšířil si královu řísi.'),
+  //       (gridItemClass = 'grid__item--true')
+  //     );
+  //   if (answerColor === false)
+  //     return (
+  //       (gridItemText = 'Škoda! Toto území jsi nedobyl.'),
+  //       (gridItemClass = 'grid__item--false')
+  //     );
+  //   return (gridItemText = text), (gridItemClass = 'grid__item');
+  // };
+  // changeGridItem();
+
+  const processCorrectAnswer = () => {
+    setAnswerColor(true);
+    addPoint(1);
+    addAnsweredStatement(1);
+  };
+
+  const processWrongAnswer = () => {
+    setAnswerColor(false);
+    addAnsweredStatement(1);
+  };
+
   return (
     <div className={gridItemClass}>
       {gridItemText}
@@ -40,12 +66,9 @@ const StatementItem = ({
           className="grid__button"
           onClick={() => {
             if (answer === true) {
-              setAnswerColor(true);
-              addPoint(1);
-              addAnsweredStatement(1);
+              processCorrectAnswer();
             } else {
-              setAnswerColor(false);
-              addAnsweredStatement(1);
+              processWrongAnswer();
             }
           }}
         >
@@ -55,12 +78,9 @@ const StatementItem = ({
           className="grid__button"
           onClick={() => {
             if (answer === false) {
-              setAnswerColor(true);
-              addPoint(1);
-              addAnsweredStatement(1);
+              processCorrectAnswer();
             } else {
-              setAnswerColor(false);
-              addAnsweredStatement(1);
+              processWrongAnswer();
             }
           }}
         >

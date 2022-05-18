@@ -22,21 +22,19 @@ const Statement = () => {
     fullPoints = true;
   }
 
-  let result;
-  if (rightAnswerPoints === 25) {
-    result = 'Zapíšeš se do dějin! Celý svět ti leží u nohou.';
-  } else if (rightAnswerPoints >= 20) {
-    result = 'Skvělá práce. Zapsal ses do dějin. Králova odměna tě nemine.';
-  } else if (rightAnswerPoints >= 15) {
-    result =
-      'Skvělá práce. Dobyl si více než polovinu světa. Král tě povýší do šlechtického stavu.';
-  } else if (rightAnswerPoints >= 10) {
-    result = 'Zaber. Máš na to, aby si králi dobyl více území.';
-  } else if (rightAnswerPoints >= 5) {
-    result = 'Tvoje výprava byla neúspěšná. Budeš se zodpovídat před králem.';
-  } else {
-    result = 'Zkus to znova. Za tento výsledek by tě král nechal popravit.';
-  }
+  const callEvaluation = (points) => {
+    if (points === 25) return 'Zapíšeš se do dějin! Celý svět ti leží u nohou.';
+    if (points >= 20)
+      return 'Skvělá práce. Zapsal ses do dějin. Králova odměna tě nemine.';
+    if (points >= 15)
+      return 'Skvělá práce. Dobyl si více než polovinu světa. Král tě povýší do šlechtického stavu.';
+    if (points >= 10) return 'Zaber. Máš na to, aby si králi dobyl více území.';
+    if (points >= 5)
+      return 'Tvoje výprava byla neúspěšná. Budeš se zodpovídat před králem.';
+    return 'Zkus to znova. Za tento výsledek by tě král nechal popravit.';
+  };
+
+  const result = callEvaluation(rightAnswerPoints);
 
   return (
     <main className="statement">
