@@ -28,25 +28,6 @@ const StatementItem = ({
   };
   const gridItemClass = provideGridItemClass();
 
-  // let gridItemText;
-  // let gridItemClass;
-  // const changeGridItem = () => {
-  //   if (answerColor === true && gameOver === true)
-  //     return (gridItemText = null), (gridItemClass = 'grid__item--animated');
-  //   if (answerColor === true)
-  //     return (
-  //       (gridItemText = 'Dobře! Rozšířil si královu řísi.'),
-  //       (gridItemClass = 'grid__item--true')
-  //     );
-  //   if (answerColor === false)
-  //     return (
-  //       (gridItemText = 'Škoda! Toto území jsi nedobyl.'),
-  //       (gridItemClass = 'grid__item--false')
-  //     );
-  //   return (gridItemText = text), (gridItemClass = 'grid__item');
-  // };
-  // changeGridItem();
-
   const processCorrectAnswer = () => {
     setAnswerColor(true);
     addPoint(1);

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
 
-const PathSA = ({ result }) => {
+const PathSA = ({ result, text, showRedCircle, placeOnMap }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'card',
     drop: (item) => showAnswer(item.answer),
@@ -12,7 +12,13 @@ const PathSA = ({ result }) => {
   }));
 
   const showAnswer = (answer) => {
-    answer === 'SA' ? result(true) : result(false);
+    if (answer === 'SA') {
+      result(true);
+      showRedCircle(true);
+    } else {
+      result(false);
+      showRedCircle(false);
+    }
   };
 
   let fill = '#68afad';
@@ -34,12 +40,26 @@ const PathSA = ({ result }) => {
       <path d="M118.38 433.8c-.17.02-.36.09-.51.18-.6.37-.77 1.17-.39 1.77.37.6 1.16.77 1.77.4.6-.37.77-1.17.39-1.77-.28-.45-.76-.66-1.26-.58z"></path>
       <path d="M134.58 438.43c-.17.02-.36.08-.51.18-.6.37-.77 1.17-.4 1.77s1.17.77 1.77.4c.61-.38.77-1.17.4-1.77-.28-.46-.77-.66-1.26-.58z"></path>
       <path d="M144.99 440.74c-.17.03-.36.09-.51.18-.6.37-.77 1.17-.39 1.77.37.61 1.16.77 1.77.4.6-.37.77-1.17.39-1.77-.28-.45-.76-.65-1.26-.58z"></path>
+      {text === 'Ohňová země' && placeOnMap === true ? (
+        <ellipse
+          ry="10.3896"
+          rx="10.06493"
+          id="svg_1"
+          cy="551.03828"
+          cx="292.30588"
+          stroke="#000"
+          fill="#ff0000"
+        />
+      ) : null}
     </g>
   );
 };
 
 PathSA.propTypes = {
   result: PropTypes.func,
+  text: PropTypes.string,
+  showRedCircle: PropTypes.func,
+  placeOnMap: PropTypes.bool,
 };
 
 export default PathSA;

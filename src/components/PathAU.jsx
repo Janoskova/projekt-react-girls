@@ -2,7 +2,7 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
 
-const PathAU = ({ result }) => {
+const PathAU = ({ result, text, showRedCircle, placeOnMap }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'card',
     drop: (item) => showAnswer(item.answer),
@@ -12,9 +12,14 @@ const PathAU = ({ result }) => {
   }));
 
   const showAnswer = (answer) => {
-    answer === 'AU' ? result(true) : result(false);
+    if (answer === 'AU') {
+      result(true);
+      showRedCircle(true);
+    } else {
+      result(false);
+      showRedCircle(false);
+    }
   };
-
   let fill = '#68afad';
   if (isOver) {
     fill = '#262c2c';
@@ -29,11 +34,25 @@ const PathAU = ({ result }) => {
         stroke="#000"
         d="M885.44 480.08c-.17.02-.36.09-.51.18-.6.37-.77 1.17-.39 1.77.37.6 1.16.77 1.77.4.6-.37.77-1.17.4-1.77-.28-.46-.77-.66-1.27-.58z"
       ></path>
+      {text === 'Austrálie' && placeOnMap === true ? (
+        <ellipse
+          stroke="#000"
+          ry="29.54544"
+          rx="30.84412"
+          id="svg_1"
+          cy="442.27213"
+          cx="878.66901"
+          fill="#ff0000"
+        />
+      ) : null}
     </g>
   );
 };
 
 PathAU.propTypes = {
   result: PropTypes.func,
+  text: PropTypes.string,
+  showRedCircle: PropTypes.func,
+  placeOnMap: PropTypes.bool,
 };
 export default PathAU;

@@ -19,6 +19,7 @@ const Map = () => {
   const [shuffledPlaces] = useState(ShuffleArray(places));
   const place = shuffledPlaces[cardIndex];
   const [answer, setAnswer] = useState(null);
+  const [placeOnMap, setPlaceOnMap] = useState(false);
   const rightAnswerPointsAsNumber = Number(
     sessionStorage.getItem('rightAnswerPoints'),
   );
@@ -54,13 +55,19 @@ const Map = () => {
     setAnswer(result);
   };
 
+  const showPlaceOnMap = (showRedCircle) => {
+    setPlaceOnMap(showRedCircle);
+  };
+
   const closeModal = (close) => {
     setAnswer(close);
     if (answer === true) {
       setCardIndex(cardIndex + 1);
       setRightAnswerPoints(rightAnswerPoints + 1);
+      setPlaceOnMap(false);
     } else {
       setWrongAnswerPoints(wrongAnswerPoints + 1);
+      setPlaceOnMap(false);
     }
   };
 
@@ -68,7 +75,7 @@ const Map = () => {
     sessionStorage.clear();
     return (
       <Assessment
-        text={`Skvělé! Jsi v cíli. Přesunul jsi ${rightAnswerPoints} kartiček a netrefil ses při tom ${wrongAnswerPoints}krát.`}
+        text={`Skvělé! Objel jsi celý svět a jsi v cíli. Získané body ${rightAnswerPoints}/${places.length}. Počet chyb: ${wrongAnswerPoints}.`}
       />
     );
   }
@@ -87,20 +94,50 @@ const Map = () => {
           version="1"
           viewBox="0 0 1052.4 580"
         >
-          <PathNA result={showResult} />
-          <PathAS result={showResult} />
-          <PathAU result={showResult} />
-          <PathAF result={showResult} />
-          <PathEU result={showResult} />
-          <PathSA result={showResult} />
+          <PathNA
+            result={showResult}
+            text={place.text}
+            showRedCircle={showPlaceOnMap}
+            placeOnMap={placeOnMap}
+          />
+          <PathAS
+            result={showResult}
+            text={place.text}
+            showRedCircle={showPlaceOnMap}
+            placeOnMap={placeOnMap}
+          />
+          <PathAU
+            result={showResult}
+            text={place.text}
+            showRedCircle={showPlaceOnMap}
+            placeOnMap={placeOnMap}
+          />
+          <PathAF
+            result={showResult}
+            text={place.text}
+            showRedCircle={showPlaceOnMap}
+            placeOnMap={placeOnMap}
+          />
+          <PathEU
+            result={showResult}
+            text={place.text}
+            showRedCircle={showPlaceOnMap}
+            placeOnMap={placeOnMap}
+          />
+          <PathSA
+            result={showResult}
+            text={place.text}
+            showRedCircle={showPlaceOnMap}
+            placeOnMap={placeOnMap}
+          />
         </svg>
       </section>
-      <section className="map__cards">
+      <nav className="map__navigation">
         {<MapCard text={place.text} key={place.id} answer={place.answer} />}
-      </section>
-      {answer !== null ? (
-        <Modal close={closeModal} info={place.info} reply={answer} />
-      ) : null}
+        {answer !== null ? (
+          <Modal close={closeModal} info={place.info} reply={answer} />
+        ) : null}
+      </nav>
     </main>
   );
 };

@@ -56,6 +56,24 @@ export const places = [
     answer: 'AS',
     info: 'Před objevnými plavbami probíhaly cesty do Indie a Číny pouze po souši. Kupecké karavany byly často přepadávány.',
   },
+  {
+    id: 6,
+    text: 'San Salvador',
+    answer: 'NA',
+    info: 'Prvním místem, které Kryštof Kolumbus v Americe objevil, byl právě jeden z ostrovů Bahamského souostroví – San Salvador.',
+  },
+  {
+    id: 7,
+    text: 'Ohňová země',
+    answer: 'SA',
+    info: 'Souostroví Ohňová země objevil v roce 1520 Fernão de Magalhães. Magalhãesův průliv spojuje Atlantský a Tichý oceán.',
+  },
+  {
+    id: 8,
+    text: 'Austrálie',
+    answer: 'AU',
+    info: 'Původní obyvatelé Austrálie jsou nazýváni Austrálci, též Aboridžinci. Jejich známým nástrojem je bumerang. ',
+  },
 ];
 
 export const events = [

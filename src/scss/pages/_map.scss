@@ -16,9 +16,10 @@
     }
   }
 
-  &__cards {
+  &__navigation {
     margin-top: $spacer;
     padding-bottom: 176px;
+    position: relative;
 
     @media screen and (min-width: 768px) {
       margin-top: 0;

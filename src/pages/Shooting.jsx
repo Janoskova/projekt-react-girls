@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { targets, lighthousesArray } from '../data';
 import ShuffleArray from '../utils/ShuffleArray';
 import AssessmentTreasure from '../components/AssessmentTreasure';
@@ -13,6 +13,7 @@ const Shooting = () => {
   const [lighthouses, setLighthouses] = useState(lighthousesArray);
   const [points, setPoints] = useState(0);
   const [index, setIndex] = useState(0);
+  const timer = useRef();
   const [shuffledTargets] = useState(ShuffleArray(targets));
   const items = shuffledTargets[index];
 
@@ -33,20 +34,20 @@ const Shooting = () => {
     setIndex(index + 1);
   };
 
-  let timer;
   const triggerAnimation = () => {
     setSailingAnimation(true);
-    timer = setTimeout(nextGame, 17000);
+    timer.current = setTimeout(nextGame, 17000);
   };
 
   if (lighthouses.length === 0) {
-    clearTimeout(timer);
+    clearTimeout(timer.current);
   }
 
   const newGame = () => {
     setIndex(0);
     setPoints(0);
     setLighthouses(lighthousesArray);
+    triggerAnimation();
   };
 
   if (index >= shuffledTargets.length) {

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDrop } from 'react-dnd';
 import PropTypes from 'prop-types';
 
-const PathNA = ({ result }) => {
+const PathNA = ({ result, text, showRedCircle, placeOnMap }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'card',
     drop: (item) => showAnswer(item.answer),
@@ -12,7 +12,13 @@ const PathNA = ({ result }) => {
   }));
 
   const showAnswer = (answer) => {
-    answer === 'NA' ? result(true) : result(false);
+    if (answer === 'NA') {
+      result(true);
+      showRedCircle(true);
+    } else {
+      result(false);
+      showRedCircle(false);
+    }
   };
 
   let fill = '#68afad';
@@ -50,12 +56,37 @@ const PathNA = ({ result }) => {
         d="M455.2 108.55c-.84 0-2.04.14-3.73.4-3.02.47-6.43.76-7.55.69-1.13-.08-1.78.3-1.45.83.9 1.45-4.65 4.69-8.31 4.84l-3.22.15 3.47.72c1.91.41 3.21 1.2 2.89 1.77-.67 1.19 2.93 2.81 6.51 2.93 1.35.04 5.25-1.06 8.68-2.46 6.95-2.84 8.68-4.49 6.18-5.89-.93-.52-1.7-1.75-1.7-2.71 0-.9-.38-1.27-1.77-1.27z"
       ></path>
       <path d="M125.5 95.535c-.63 0-1.94.504-2.89 1.121-.96.616-1.22 1.12-.58 1.12s1.94-.504 2.89-1.12c.96-.617 1.22-1.121.58-1.121z"></path>
+      {text === 'Newfoundland' && placeOnMap === true ? (
+        <ellipse
+          ry="10.3896"
+          rx="10.06493"
+          id="svg_1"
+          cy="180.25936"
+          cx="335.81234"
+          stroke="#000"
+          fill="#ff0000"
+        />
+      ) : null}
+      {text === 'San Salvador' && placeOnMap === true ? (
+        <ellipse
+          ry="10.3896"
+          rx="10.06493"
+          id="svg_1"
+          cy="270.51903"
+          cx="287.11108"
+          stroke="#000"
+          fill="#ff0000"
+        />
+      ) : null}
     </g>
   );
 };
 
 PathNA.propTypes = {
   result: PropTypes.func,
+  text: PropTypes.string,
+  showRedCircle: PropTypes.func,
+  placeOnMap: PropTypes.bool,
 };
 
 export default PathNA;
