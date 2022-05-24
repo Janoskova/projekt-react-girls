@@ -64,7 +64,7 @@ const PathNA = ({ result, text, showRedCircle, placeOnMap }) => {
           cy="180.25936"
           cx="335.81234"
           stroke="#000"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
       {text === 'San Salvador' && placeOnMap === true ? (
@@ -75,7 +75,7 @@ const PathNA = ({ result, text, showRedCircle, placeOnMap }) => {
           cy="270.51903"
           cx="287.11108"
           stroke="#000"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
     </g>

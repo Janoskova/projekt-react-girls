@@ -42,7 +42,7 @@ const PathAU = ({ result, text, showRedCircle, placeOnMap }) => {
           id="svg_1"
           cy="442.27213"
           cx="878.66901"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
     </g>

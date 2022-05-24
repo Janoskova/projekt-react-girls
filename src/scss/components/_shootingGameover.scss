@@ -1,0 +1,44 @@
+.shooting {
+  &__field--gameover {
+    margin: 0 auto 176px auto;
+    border-radius: 15px;
+    width: 898px;
+    height: 400px;
+    border: 1px solid $color-font;
+    background-color: $color-primary;
+    color: $color-font;
+  }
+
+  &__skull {
+    background: url(../../assets/skull.svg) no-repeat center center/contain;
+    margin: 0 auto 0 auto;
+    animation: size 5s both, shaking 2s infinite both ease-in-out;
+  }
+
+  @keyframes shaking {
+    0% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(10deg);
+    }
+  }
+
+  @keyframes size {
+    0% {
+      width: 150px;
+      height: 200px;
+    }
+    100% {
+      width: 350px;
+      height: 300px;
+    }
+  }
+
+  &__gameover {
+    margin-top: $spacer;
+  }
+}

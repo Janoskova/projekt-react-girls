@@ -107,27 +107,13 @@
     }
   }
 
-  &__field,
-  &__field--gameover {
+  &__field {
     margin: 0 auto 176px auto;
-    padding: 5px 0 5px 0;
     border-radius: 15px;
     width: 898px;
     height: 400px;
-  }
-
-  &__field {
     background: url(../../assets/ocean.jpg) no-repeat center center/cover;
+    padding: 5px 0 5px 0;
     position: relative;
-  }
-
-  &__field--gameover {
-    background: url(../../assets/treasure-gameover.jpg) no-repeat center bottom /
-      cover;
-    color: $color-primary;
-  }
-
-  &__gameover {
-    margin-top: $spacer;
   }
 }

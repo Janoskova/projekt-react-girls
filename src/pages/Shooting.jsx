@@ -4,6 +4,7 @@ import { targets, lighthousesArray } from '../data';
 import ShuffleArray from '../utils/ShuffleArray';
 import AssessmentTreasure from '../components/AssessmentTreasure';
 import Lighthouse from '../components/Lighthouse';
+import ShootingGameover from '../components/ShootingGameover';
 import ShootingTarget from '../components/ShootingTarget';
 import ShootingButton from '../components/ShootingButton';
 
@@ -91,11 +92,7 @@ const Shooting = () => {
         />
       </section>
       {lighthouses.length === 0 ? (
-        <section className="shooting__field--gameover">
-          <h2 className="shooting__gameover">
-            Tentokrát to nevyšlo. Zkus to znova!
-          </h2>
-        </section>
+        <ShootingGameover />
       ) : (
         <section className="shooting__field">
           {items.map((item) => (

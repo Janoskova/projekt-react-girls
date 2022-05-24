@@ -39,7 +39,7 @@ const PathAS = ({ result, text, showRedCircle, placeOnMap }) => {
           id="svg_1"
           cy="287.07746"
           cx="724.77303"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
     </g>

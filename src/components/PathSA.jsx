@@ -48,7 +48,7 @@ const PathSA = ({ result, text, showRedCircle, placeOnMap }) => {
           cy="551.03828"
           cx="292.30588"
           stroke="#000"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
     </g>

@@ -238,6 +238,67 @@
   background: url(../../assets/lighthouse.svg) no-repeat center center/contain;
 }
 
+.shooting__field--gameover {
+  margin: 0 auto 176px auto;
+  border-radius: 15px;
+  width: 898px;
+  height: 400px;
+  border: 1px solid #262c2c;
+  background-color: #68afad;
+  color: #262c2c;
+}
+.shooting__skull {
+  background: url(../../assets/skull.svg) no-repeat center center/contain;
+  margin: 0 auto 0 auto;
+  -webkit-animation: size 5s both, shaking 2s infinite both ease-in-out;
+          animation: size 5s both, shaking 2s infinite both ease-in-out;
+}
+@-webkit-keyframes shaking {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes shaking {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@-webkit-keyframes size {
+  0% {
+    width: 150px;
+    height: 200px;
+  }
+  100% {
+    width: 350px;
+    height: 300px;
+  }
+}
+@keyframes size {
+  0% {
+    width: 150px;
+    height: 200px;
+  }
+  100% {
+    width: 350px;
+    height: 300px;
+  }
+}
+.shooting__gameover {
+  margin-top: 20px;
+}
+
 .target {
   text-align: left;
   cursor: crosshair;
@@ -832,23 +893,14 @@
     order: 0;
   }
 }
-.shooting__field, .shooting__field--gameover {
+.shooting__field {
   margin: 0 auto 176px auto;
-  padding: 5px 0 5px 0;
   border-radius: 15px;
   width: 898px;
   height: 400px;
-}
-.shooting__field {
   background: url(../../assets/ocean.jpg) no-repeat center center/cover;
+  padding: 5px 0 5px 0;
   position: relative;
-}
-.shooting__field--gameover {
-  background: url(../../assets/treasure-gameover.jpg) no-repeat center bottom/cover;
-  color: #68afad;
-}
-.shooting__gameover {
-  margin-top: 20px;
 }
 
 html {

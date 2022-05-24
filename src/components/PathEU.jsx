@@ -42,7 +42,7 @@ const PathEU = ({ result, text, showRedCircle, placeOnMap }) => {
           cy="221.81779"
           cx="485.81221"
           stroke="#000"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
     </g>

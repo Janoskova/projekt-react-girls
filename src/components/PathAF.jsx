@@ -39,7 +39,7 @@ const PathAF = ({ result, text, showRedCircle, placeOnMap }) => {
           cy="475.06431"
           cx="557.89008"
           stroke="#000"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
       {text === 'Ceuta' && placeOnMap === true ? (
@@ -50,7 +50,7 @@ const PathAF = ({ result, text, showRedCircle, placeOnMap }) => {
           cy="243.89567"
           cx="489.05897"
           stroke="#000"
-          fill="#ff0000"
+          fill="#eb5e55"
         />
       ) : null}
     </g>
