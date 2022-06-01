@@ -248,10 +248,12 @@
   color: #262c2c;
 }
 .shooting__skull {
+  width: 350px;
+  height: 300px;
   background: url(../../assets/skull.svg) no-repeat center center/contain;
   margin: 0 auto 0 auto;
-  -webkit-animation: size 5s both, shaking 2s infinite both ease-in-out;
-          animation: size 5s both, shaking 2s infinite both ease-in-out;
+  -webkit-animation: shaking 1s 1.5 both ease-in-out;
+          animation: shaking 1s 1.5 both ease-in-out;
 }
 @-webkit-keyframes shaking {
   0% {
@@ -273,26 +275,6 @@
   }
   100% {
     transform: rotate(10deg);
-  }
-}
-@-webkit-keyframes size {
-  0% {
-    width: 150px;
-    height: 200px;
-  }
-  100% {
-    width: 350px;
-    height: 300px;
-  }
-}
-@keyframes size {
-  0% {
-    width: 150px;
-    height: 200px;
-  }
-  100% {
-    width: 350px;
-    height: 300px;
   }
 }
 .shooting__gameover {

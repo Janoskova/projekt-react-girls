@@ -1,5 +1,9 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import useSound from 'use-sound';
+import coinSound from '../assets/records/coinSound.wav';
+import errorSound from '../assets/records/errorSound.wav';
+import nonoSound from '../assets/records/nonoSound.wav';
 import { targets, lighthousesArray } from '../data';
 import ShuffleArray from '../utils/ShuffleArray';
 import AssessmentTreasure from '../components/AssessmentTreasure';
@@ -17,8 +21,18 @@ const Shooting = () => {
   const timer = useRef();
   const [shuffledTargets] = useState(ShuffleArray(targets));
   const items = shuffledTargets[index];
+  const [playCoinSound] = useSound(coinSound);
+  const [playErrorSound] = useSound(errorSound);
+  const [playNonoSound, { stop }] = useSound(nonoSound);
+
+  useEffect(() => {
+    return () => {
+      stop();
+    };
+  }, [points]);
 
   const deleteLighthouse = (newLighthouses) => {
+    playErrorSound();
     return setLighthouses(newLighthouses);
   };
 
@@ -28,6 +42,7 @@ const Shooting = () => {
 
   const triggerCoinAnimation = (coin) => {
     setCoinAnimation(coin);
+    playCoinSound();
   };
 
   const nextGame = () => {
@@ -42,6 +57,7 @@ const Shooting = () => {
 
   if (lighthouses.length === 0) {
     clearTimeout(timer.current);
+    playNonoSound();
   }
 
   const newGame = () => {
