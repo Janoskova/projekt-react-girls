@@ -29,7 +29,7 @@ const Shooting = () => {
     return () => {
       stop();
     };
-  }, [points]);
+  }, [points, stop]);
 
   const deleteLighthouse = (newLighthouses) => {
     playErrorSound();
