@@ -16,12 +16,12 @@ const Home = () => {
           Stojíš na prahu věku, jenž otřásá samotnými kořeny středověkého světa.
           Doby, v níž pád meteoritu není znamením a trestem božím, ale
           přírodními zákony řízený úkaz, který je nyní stejně nevyzpytatelný
-          jako samo moře. Doby, kdy země přestala být středem vesmíru a
-          středomoří světa. Doby, kdy nenasytnost člověka začne poutat přírodu
+          jako samo moře. Doby, kdy Země přestala být středem vesmíru a
+          Středomořím světa. Doby, kdy nenasytnost člověka začne poutat přírodu
           okovy rozumu a sežehne kdysi mocné americké civilizace, aby z jejich z
           popela stvořila nový řád, který nakonec ohrozí samu existenci člověka
           v jeho nově vydobytém světě. Odvážíš se na cestu, která zpochybní tvé
-          jistoty (znalosti)? Cestu, jež hrozí stejným zoufalstvím, které šlo
+          jistoty a znalosti? Cestu, jež hrozí stejným zoufalstvím, které šlo
           vidět v pohledu dávných dobrodruhů při obhlížení tenčících se zásob na
           širém moři. Budou si tě tyto stránky pamatovat jako slavného
           dobyvatele a pokořitele mocných úkolů nebo se přidáš k bezpočtu

@@ -26,6 +26,10 @@ const Footer = () => {
           <a className="references__link" href="https://unsplash.com/">
             Unsplash
           </a>
+          | sounds from{' '}
+          <a className="references__link" href="https://freesound.org/">
+            Freesound
+          </a>
         </div>
       </footer>
     </>
